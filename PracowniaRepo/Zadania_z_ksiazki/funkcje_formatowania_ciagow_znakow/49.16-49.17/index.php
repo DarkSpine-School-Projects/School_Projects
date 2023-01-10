@@ -42,7 +42,7 @@
     main {
         color: grey;
         font-size: 19px;
-        background-color: blanchedalmond;
+        background-color: black;
         padding: 30px;
         letter-spacing: 2px;
         border: 2px solid gainsboro;
