@@ -34,20 +34,17 @@
                     <?php 
                         $conn = mysqli_connect('localhost','root','','firma');
                      
-                        $result = mysqli_query($conn, "SELECT `imie`, `nazwisko`, `pensia` FROM `informatycy_ponizej_roku_1975` ORDER BY pensia DESC");
+                        $result = mysqli_query($conn, "SELECT `imie`, `nazwisko`, `pensja` FROM `informatycy_ponizej_roku_1975` ORDER BY `pensja`DESC");
                        
-                        while( $dispaly_imie = mysqli_fetch_assoc( $result )){
+                        while( $dispaly_info = mysqli_fetch_assoc( $result )){
                             echo '
                             <tr>
-                            <td>'.$dispaly_imie["imie"].'</td>
-                            <td>'.$dispaly_imie["nazwisko"].'</td>
-                            <td>'.$dispaly_imie["pensia"].'</td>
+                            <td>'.$dispaly_info["imie"].'</td>
+                            <td>'.$dispaly_info["nazwisko"].'</td>
+                            <td>'.$dispaly_info["pensja"].'</td>
                             </tr>
                             ';
                         }
-
-
-
                     ?>
                     
                 </table>
@@ -55,10 +52,57 @@
 
            <div class="panel_prawy">
                     <h2>sekretarki firmy omega</h2>
+                    <div class="dane_sekretarek">
+                        <?php 
+                            $i=1;
+                            $result = mysqli_query($conn, "SELECT `imie`, `nazwisko`, `pensja` FROM `sekretarki` ");
+                            while( $dispaly_info_sekretarki = mysqli_fetch_assoc( $result )){
+                                echo 
+                                
+                                $i++.'.'.$dispaly_info_sekretarki["imie"].' '.$dispaly_info_sekretarki["nazwisko"].'<br>';
+                            
+                            
+                                
+                            }
+                        ?>
+                    </div>
+                    
+                    <hr>
 
+                    <div class="pensja_sekretarek">
+                        <?php 
+                            //diplay najwyzsza pensja
+                            $result = mysqli_query($conn, "SELECT `pensja` FROM `sekretarki` ORDER BY pensja DESC");
+                            $dispaly_info_sekretarki = mysqli_fetch_assoc($result);
+                            echo 'Najwyzsza pensja wynosi: '.$dispaly_info_sekretarki["pensja"].'<br>';
+
+                            //diplay Najniższa pensja   
+                            $result = mysqli_query($conn, "SELECT `pensja` FROM `sekretarki` ORDER BY `pensja`");
+                            $dispaly_info_sekretarki = mysqli_fetch_assoc($result);
+                            echo 'Najniższa pensja wynosi: '.$dispaly_info_sekretarki["pensja"].'<br>';
+
+                            //diplay Średnia Pensja
+                            $result = mysqli_query($conn, "SELECT `pensja` FROM `sekretarki` ");
+
+
+                            while( $dispaly_info_sekretarki = mysqli_fetch_assoc( $result )){
+                                $dispaly_info_sekretarki["pensja"];
+                                
+                            
+                            
+                                
+                            }
+                       
+
+                                
+                            
+                        ?>
+                    </div> 
            </div>
 
-           <div class="stopka">Autor: 000000000000</div>
+           <div class="stopka">
+                Autor: 000000000000
+           </div>
         </main>
     </section>
 </body>
