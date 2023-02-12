@@ -4,15 +4,17 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: 50px 50px;
+  grid-template-columns: 40% 60%;
   grid-template-rows: auto;
   grid-template-areas:
-    "baner baner baner baner"
+    "baner baner"
     "panel_lewy panel_prawy"
     "stopka stopka";
-  height: 50vh;
+  min-height: 50vh;
   background: #8bb381;
   border: 10px solid #8bb381;
+  gap: 0;
+  margin: 0;
 }
 main h1 {
   margin: 0;
@@ -24,22 +26,33 @@ main h1 {
   color: white;
   font-size: 120%;
   min-height: 10%;
+  width: 100;
   background: #336600;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+}
+.baner h1 {
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
 }
 .panel_lewy {
   grid-area: panel_lewy;
   background: #afc7c7;
-  width: 40%;
-  height: 70%;
+  min-width: 40%;
+  min-height: 70%;
   text-align: center;
 }
 .panel_prawy {
   grid-area: panel_prawy;
-
   background: #cffcec;
-  width: 60%;
+  min-width: 60%;
   font-size: 15px;
-  height: 70%;
+  min-height: 70%;
 }
 .pensja_sekretarek h4 {
   text-align: center;
@@ -47,14 +60,13 @@ main h1 {
 .stopka {
   grid-area: stopka;
   padding: 10px;
-  height: 10%;
+  min-height: 10%;
   width: 100;
   clear: both;
   background: #669966;
   color: white;
   text-align: center;
   font-size: 120%;
-  align-self: flex-end;
 }
 table {
   width: 100%;
