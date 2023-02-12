@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +8,26 @@
     <title>Baza danych o pracownikach firm</title>
     <link rel="stylesheet" href="./firma.css">
 </head>
+
 <body>
     <section>
         <main>
-           <div class="baner">
+            <div class="baner">
                 <h1>Baza danych o pracownikach</h1>
-            </div> 
+            </div>
 
-           <div class="panel_lewy">
+            <div class="panel_lewy">
                 <div class="panel_lewy_baner">
                     <h2>informatycy ponizej roku 1975</h2>
                 </div>
                 <table>
-                   
+
                     <tr>
                         <th>
                             imie
                         </th>
                         <th>
-                            nazwisko    
+                            nazwisko
                         </th>
                         <th>
                             pensja
@@ -46,64 +48,52 @@
                             ';
                         }
                     ?>
-                    
                 </table>
-           </div>
+            </div>
 
-           <div class="panel_prawy">
-                    <h2>sekretarki firmy omega</h2>
-                    <div class="dane_sekretarek">
-                        <?php 
+            <div class="panel_prawy">
+                <h2>sekretarki firmy omega</h2>
+                <div class="dane_sekretarek">
+                    <?php 
                             $i=1;
                             $result = mysqli_query($conn, "SELECT `imie`, `nazwisko`, `pensja` FROM `sekretarki` ");
                             while( $dispaly_info_sekretarki = mysqli_fetch_assoc( $result )){
                                 echo 
                                 
                                 $i++.'.'.$dispaly_info_sekretarki["imie"].' '.$dispaly_info_sekretarki["nazwisko"].'<br>';
-                            
-                            
-                                
                             }
                         ?>
-                    </div>
-                    
-                    <hr>
+                </div>
 
-                    <div class="pensja_sekretarek">
-                        <?php 
+                <hr>
+
+                <div class="pensja_sekretarek">
+                    <?php 
                             //diplay najwyzsza pensja
                             $result = mysqli_query($conn, "SELECT `pensja` FROM `sekretarki` ORDER BY pensja DESC");
                             $dispaly_info_sekretarki = mysqli_fetch_assoc($result);
-                            echo 'Najwyzsza pensja wynosi: '.$dispaly_info_sekretarki["pensja"].'<br>';
+                            echo '<h4>Najwyzsza pensja wynosi: '.$dispaly_info_sekretarki["pensja"].' zł'.'</h4><br>';
 
                             //diplay Najniższa pensja   
                             $result = mysqli_query($conn, "SELECT `pensja` FROM `sekretarki` ORDER BY `pensja`");
                             $dispaly_info_sekretarki = mysqli_fetch_assoc($result);
-                            echo 'Najniższa pensja wynosi: '.$dispaly_info_sekretarki["pensja"].'<br>';
+                            echo '<h4>Najniższa pensja wynosi: '.$dispaly_info_sekretarki["pensja"].' zł'.'</h4><br>';
 
                             //diplay Średnia Pensja
-                            $result = mysqli_query($conn, "SELECT `pensja` FROM `sekretarki` ");
+                            $result = mysqli_query($conn, "SELECT AVG(`pensja`) AS pensja_AVG FROM `sekretarki` ");
 
 
-                            while( $dispaly_info_sekretarki = mysqli_fetch_assoc( $result )){
-                                $dispaly_info_sekretarki["pensja"];
-                                
-                            
-                            
-                                
-                            }
-                       
-
-                                
-                            
+                            $dispaly_info_sekretarki = mysqli_fetch_assoc( $result );
+                            echo '<h4>srednia pensja wynosi: '.$dispaly_info_sekretarki['pensja_AVG'].' zł</h4>'; 
                         ?>
-                    </div> 
-           </div>
+                </div>
+            </div>
 
-           <div class="stopka">
+            <div class="stopka">
                 Autor: 000000000000
-           </div>
+            </div>
         </main>
     </section>
 </body>
+
 </html>
