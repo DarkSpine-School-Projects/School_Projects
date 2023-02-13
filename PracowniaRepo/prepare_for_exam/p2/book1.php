@@ -18,10 +18,24 @@
             <form action="" method="POST">
                 wybierz autora:
                 <select name="biblioteka_autorzy" id="">
-                    <option value="Bonda_Katarzyna">Bonda Katarzyna</option>
-                    <option value="Coben_Harlan">Coben Harlan</option>
-                    <option value="Link_Charlotte">Link Charlotte</option>
-                    <option value="Nesbo_Jo">Nesbo Jo</option>
+
+                    <?php 
+                    
+                    $server_conn = mysqli_connect('localhost','root','','biblioteka');
+
+                    $sql = "SELECT DISTINCT autor FROM `autorzy`";
+
+                    $biblioteka_autorzy =  $_POST['biblioteka_autorzy']; 
+
+                    $sql_select = mysqli_query($server_conn, $sql);
+
+                    while($DB_result = mysqli_fetch_assoc($sql_select)){
+                    echo '<option value="'.$DB_result['autor'].'">'.$DB_result['autor'].'</option>';
+                    }
+                    
+                    ?>
+                    </option>
+
                 </select>
                 <button type="sumbit">Zatwierdź</button>
             </form>
@@ -35,15 +49,12 @@
             </h3>
 
             <?php 
-                $server_conn = mysqli_connect('localhost','root','','biblioteka');
-
+               
                 $sql = "SELECT * FROM `autorzy` WHERE `autor` = '$biblioteka_autorzy';";
 
                 $biblioteka_autorzy =  $_POST['biblioteka_autorzy']; 
 
                 $sql_select = mysqli_query($server_conn, $sql);
-
-            
 
                 while($DB_result = mysqli_fetch_assoc($sql_select)){
                     echo '<div id="dispaly_ksiazki"><h3>'.$DB_result["ksiazka"].'</h3>'.' - cena za wypozyczenie: '.$DB_result["cena"].' zł</div>' ;
