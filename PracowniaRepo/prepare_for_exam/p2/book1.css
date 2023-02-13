@@ -1,0 +1,35 @@
+.container {
+  background: #ccffff;
+  max-height: 400px;
+  width: 600px;
+  padding: 15px;
+}
+.naglowek {
+  background: #000066;
+  height: 50px;
+  text-align: center;
+  color: white;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+#gorna {
+  height: 50px;
+  background: #ccffff;
+  text-align: center;
+  padding-top: 20px;
+  border: 2px dotted #000066;
+}
+#dolna {
+  background: #33ccff;
+  text-align: center;
+  height: 170px;
+  padding-top: 5px;
+}
+#dispaly_ksiazki {
+  margin-top: 2vh;
+}
