@@ -80,7 +80,7 @@
                             echo '<h4>Najniższa pensja wynosi: '.$dispaly_info_sekretarki["pensja"].' zł'.'</h4><br>';
 
                             //diplay Średnia Pensja
-                            $result = mysqli_query($conn, "SELECT AVG(`pensja`) AS pensja_AVG FROM `sekretarki` ");
+                            $result = mysqli_query($conn, "SELECT FORMAT(AVG(`pensja`), 'N2') AS pensja_AVG FROM `sekretarki` ");
 
 
                             $dispaly_info_sekretarki = mysqli_fetch_assoc( $result );
