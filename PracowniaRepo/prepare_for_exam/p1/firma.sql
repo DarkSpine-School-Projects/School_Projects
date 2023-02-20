@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2023 at 09:43 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Czas generowania: 20 Lut 2023, 09:00
+-- Wersja serwera: 10.1.35-MariaDB
+-- Wersja PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,36 +19,52 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `firma`
+-- Baza danych: `firma`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `informatycy_ponizej_roku_1975`
+-- Struktura tabeli dla tabeli `informatycy_ponizej_roku_1975`
 --
 
 CREATE TABLE `informatycy_ponizej_roku_1975` (
   `imie` text NOT NULL,
   `nazwisko` text NOT NULL,
   `pensja` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `informatycy_ponizej_roku_1975`
+-- Zrzut danych tabeli `informatycy_ponizej_roku_1975`
 --
 
 INSERT INTO `informatycy_ponizej_roku_1975` (`imie`, `nazwisko`, `pensja`) VALUES
-('jon', 'sdf', 3000),
-('sadf', 'xcvz', 2222),
-('sdafxcz', 'bvdfxc', 3221),
-('cxzv', 'yvfc', 1000),
-('asdxzc', 'cgvcx', 21212),
-('saxzcgh', 'zxcgsad', 6442),
-('cxxcbxcv', 'yhgfd', 4211),
-('sadzxcsdtg', 'asyhfgvc', 7655),
-('asdfsdasdag', 'xcvbzxcvr', 2313),
-('zxcedsrt', 'dasfhvcxz', 5231);
+('Jan', 'Smith', 3000),
+('Jan', 'Smith', 3000),
+('Jan', 'Smith', 3000),
+('asd', 'asd', 3500),
+('asd', 'asd', 3500);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `sekretarki`
+--
+
+CREATE TABLE `sekretarki` (
+  `imie` text NOT NULL,
+  `nazwisko` text NOT NULL,
+  `pensja` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `sekretarki`
+--
+
+INSERT INTO `sekretarki` (`imie`, `nazwisko`, `pensja`) VALUES
+('Janina', 'Bosman', 3000),
+('Janina', 'Bosman', 3000),
+('Adam', 'Karas', 1000);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
