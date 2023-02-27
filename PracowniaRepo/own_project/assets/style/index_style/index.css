@@ -6,4 +6,28 @@
 
 body {
   background-color: rgb(16, 16, 16);
+  color: white !important;
 }/*# sourceMappingURL=index.css.map */
+
+/*load*/
+.load-container{
+  animation: load-screen 1s ease-in-out alternate infinite;
+  display: flex;
+  justify-items: center;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.word-load{
+  text-shadow: 0px 0px 10px white;
+}
+@keyframes load-screen {
+    0%{
+
+    }
+    100%{
+
+    }
+}
