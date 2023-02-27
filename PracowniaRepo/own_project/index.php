@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,29 @@
 
     <link rel="stylesheet" href="./assets/style/index_style/index.css">
 </head>
+
 <body>
-    <div class="load-container">  
-            <span class="word-load word-load-1">Największa</span>
-            <span class="word-load word-load-1">Biblioteka</span>
-            <span class="word-load word-load-1">Filmów</span>
-            
-    </div>
-    <?php
-        mysqli_connect('127.0.0.1','root_DB','','test_db');
-    ?>
+    <!-- Loading Screen -->
+    <?php include_once './assets/components/loading.php' ?>
+
     <!-- Menu Bar -->
-    <?php include './assets/components/nav.php' ?>
+    <?php include_once './assets/components/nav.php' ?>
+
+    <!-- Account BTN -->
+    <?php include_once './assets/components/accaunt.php' ?>
+    <div class="container">
+        <section class="header">
+
+        </section>
+    </div>
+    <?php 
+    $myFile = "filesdfe.html"; // or .php   
+$fh = fopen($myFile, 'w'); // or die("error");  
+$stringData = "your html code php code goes here";   
+fwrite($fh, $stringData);
+fclose($fh);
+    
+    ?>
 </body>
+
 </html>

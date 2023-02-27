@@ -1,0 +1,53 @@
+@import "./variebles";
+
+.accaunt-btn {
+  transform: scale(150%);
+  opacity: 0%;
+  height: max-content;
+  background: $nav_color;
+  position: fixed;
+  bottom: 2vh;
+  left: 5%;
+  width: max-content;
+  padding: 4px 4px 1px 4px;
+  border-radius: 3%;
+  transition: all 0.2s ease-in-out;
+  animation: show-accaunt-btn 0.5s ease-in-out forwards 2s;
+  @keyframes show-accaunt-btn {
+    0% {
+    }
+    100% {
+      bottom: 5vh;
+      transform: scale(160%);
+      opacity: 100%;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: $option_color;
+    svg {
+      fill: $body_color_dark;
+    }
+    .login_desc {
+      opacity: 100%;
+      top: 50%;
+      left: 140%;
+    }
+  }
+
+  svg {
+    fill: white;
+  }
+}
+
+.login_desc {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 120%;
+  pointer-events: none;
+  opacity: 0%;
+  transition: all 0.2s ease-in-out;
+  font-size: 70%;
+}
