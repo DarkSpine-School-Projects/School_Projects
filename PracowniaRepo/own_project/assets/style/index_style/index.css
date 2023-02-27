@@ -1,33 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+:root{
+
+}
+
 *, html, body {
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
+  font-family: 'Comfortaa', cursive;
 }
 
 body {
   background-color: rgb(16, 16, 16);
   color: white !important;
+
 }/*# sourceMappingURL=index.css.map */
 
 /*load*/
 .load-container{
-  animation: load-screen 1s ease-in-out alternate infinite;
+  animation: load-screen 1.3s ease-in-out;
   display: flex;
-  justify-items: center;
-  align-self: center;
-  justify-self: center;
+  align-items: center;
   text-align: center;
   justify-content: center;
-  align-items: center;
+  justify-items: center;
+  align-content: center;
+  gap: 0px;
+  height: 100vh;
+  width: 100%;
+  opacity: 0%;
+  pointer-events: none;
+  background-color: rgb(0, 0, 0);
+
+}
+@keyframes  load-screen{
+  0%{
+    opacity: 10%;
+    pointer-events: all;
+    background-color: rgb(0, 0, 0);
+  }
+  20%{
+    opacity: 100%;
+  }
+
+  90%{
+    opacity: 100%;
+  }
+  99%{
+    pointer-events: all;
+  }
+  100%{
+    opacity: 0%;
+    pointer-events: none;
+    background-color: rgb(0, 0, 0);
+  }
 }
 .word-load{
+  margin: 10px;
   text-shadow: 0px 0px 10px white;
+  width: max-content;
+  font-size: 3vw;
 }
-@keyframes load-screen {
-    0%{
+.word-load-1{
+  animation: load-screen-word-effect 1s ease-in-out infinite;
+  margin: 10px;
+  text-shadow: 0px 0px 10px white;
+  
+  width: max-content;
+}
+@keyframes  load-screen-word-effect{
+  0%{
 
-    }
-    100%{
+  }
+  100%{
 
-    }
+  }
 }
