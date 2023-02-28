@@ -211,6 +211,139 @@ nav ul li .search-btn:hover {
   font-size: 70%;
 }
 
+.log-container {
+  background: rgb(190, 43, 43);
+  box-shadow: 0 0px 50px rgb(190, 43, 43);
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  min-height: 20vh;
+  height: 40vh;
+  width: 30%;
+}
+
+.log-container-flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  justify-content: center;
+  align-self: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+.log-container-flex label {
+  margin: 0;
+}
+.log-container-flex div {
+  justify-self: center;
+  align-self: center;
+  width: 70%;
+}
+.log-container-flex div input {
+  color: rgb(128, 128, 128);
+  outline: none;
+  background-color: white;
+  border: 1px solid white;
+  padding: 7px;
+  border-radius: 3px;
+  transition: all 0.18s ease-in-out;
+}
+.log-container-flex div input:hover {
+  background-color: rgb(16, 16, 16);
+  border: 1px solid rgb(16, 16, 16);
+  box-shadow: 0px 0px 10px rgb(16, 16, 16);
+}
+.log-container-flex div input:focus {
+  border: 1px solid rgb(16, 16, 16);
+  outline: none;
+  background-color: rgb(16, 16, 16);
+}
+.log-container-flex div .mail {
+  width: 100%;
+  padding: 5px;
+}
+.log-container-flex div .password {
+  width: 100%;
+  padding: 5px;
+}
+.log-container-flex button {
+  width: 40%;
+  color: white;
+  background-color: rgb(16, 16, 16);
+  border: 1px solid rgb(16, 16, 16);
+  padding: 10px;
+  border-radius: 3px;
+  transition: all 0.14s ease-in-out;
+}
+.log-container-flex button:hover {
+  background-color: white;
+  border: 1px solid white;
+  box-shadow: 0px 0px 10px white;
+  color: rgb(16, 16, 16);
+  cursor: pointer;
+}
+.log-container-flex a {
+  text-decoration: underline;
+}
+
+.movie-card {
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  min-width: 15%;
+  width: 20%;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: rgb(190, 43, 43);
+  min-height: 10vh;
+  height: -moz-max-content;
+  height: max-content;
+  transition: all 0.2s ease-in-out;
+  padding: 1px;
+  gap: 20px;
+}
+.movie-card:hover {
+  box-shadow: 0px 0px 20px rgb(255, 255, 255);
+  background-color: white;
+}
+.movie-card:hover .title {
+  color: rgb(16, 16, 16);
+}
+.movie-card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+.movie-card .date {
+  color: rgb(16, 16, 16);
+}
+.movie-card .title,
+.movie-card .date {
+  margin: 0;
+}
+.movie-card .title:hover,
+.movie-card .date:hover {
+  border: 0px 0px 10px red !important;
+}
+
+.movie-card-container {
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20vh;
+  display: flex;
+  width: 80%;
+}
+
 *,
 html,
 body {

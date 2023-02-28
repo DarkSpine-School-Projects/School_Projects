@@ -11,6 +11,10 @@
 </head>
 
 <body>
+    <?php 
+    $server_con=mysqli_connect('localhost','root','','netlib'); 
+    ?>
+
     <!-- Loading Screen -->
     <?php include_once './assets/components/loading.php' ?>
 
@@ -23,15 +27,47 @@
         <section class="header">
 
         </section>
+        <section class="movie-card-container">
+
+            <?php 
+            $sql = "SELECT * FROM `movie` ORDER BY 'date' LIMIT 10;";
+            $query = mysqli_query($server_con,$sql);
+            $assoc = mysqli_fetch_assoc($query);
+            if(isset($assoc)){
+                $query = mysqli_query($server_con,$sql);
+                while($assoc = mysqli_fetch_assoc($query)){
+                    echo 
+                    ' 
+                    <div name="movie-card" class="movie-card">
+                        <a href="http://localhost/Websites_Xampp/Projects_Done_On_Lessons/PracowniaRepo/own_project/movie/'.$assoc['movie_id'].'">
+                        <div class="image">
+                        <img src="'.$assoc['image'].'" alt="'.$assoc['title'].'">
+                        </div>
+                        <div class="title"><h3>
+                        '.$assoc['title'].'</h3>
+                        </div>
+                        <div class="date">
+                        '.$assoc['date'].'
+                        </div>
+                        </a>
+                    </div>
+                    ';
+                };
+            };
+
+    
+            ?>
+        </section>
     </div>
     <?php 
-    $myFile = "filesdfe.html"; // or .php   
-$fh = fopen($myFile, 'w'); // or die("error");  
-$stringData = "your html code php code goes here";   
-fwrite($fh, $stringData);
-fclose($fh);
+    // $myFile = "filesdfe.html"; // or .php   
+    // $fh = fopen($myFile, 'w'); // or die("error");  
+    // $stringData = "your html code php code goes here";   
+    // fwrite($fh, $stringData);
+    // fclose($fh);
     
     ?>
+
 </body>
 
 </html>
