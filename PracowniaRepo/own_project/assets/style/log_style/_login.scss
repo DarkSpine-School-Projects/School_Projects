@@ -3,8 +3,6 @@ $btn-log-width: 70%;
 .log-container {
   background: $nav_color;
   box-shadow: 0 0px 50px $nav_color;
-  backdrop-filter: blur(9.5px);
-  -webkit-backdrop-filter: blur(9.5px);
   border-radius: 10px;
   position: absolute;
   top: 50%;
@@ -13,6 +11,16 @@ $btn-log-width: 70%;
   min-height: 20vh;
   height: 40vh;
   width: 30%;
+
+  transition: all 0.2s ease-in-out;
+  h1 {
+    position: relative;
+    top: 10%;
+    text-align: center;
+  }
+  &:hover {
+    box-shadow: 0 0px 30px $nav_color;
+  }
 }
 .log-container-flex {
   width: 100%;

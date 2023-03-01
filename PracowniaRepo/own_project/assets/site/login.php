@@ -22,22 +22,50 @@
 <body>
     <div class="log-container">
 
-        <div class="log-container-flex">
-            <h1>Log In</h1>
+
+        <h1>Log In</h1>
+        <form class="log-container-flex" method="POST">
             <div class="mail-container">
                 MAIL
                 <br>
-                <input type="mail" id="mail" class="mail">
+                <input type="mail" id="mail" class="mail" name="mail">
             </div>
 
             <div class="passowrd-container">
                 PASSWORD
                 <br>
-                <input type="password" id="password" class="password">
+                <input type="password" id="password" class="password" name="password">
             </div>
             <button type="submit">LOGIN</button>
+
+
             <a href="./registration.php"><small>Registration</small></a>
-        </div>
+        </form>
+
+        <?php 
+              
+
+                    if(!isset($_POST['mail']) or !isset($_POST['password']) ){
+                        echo '';
+                    }else{
+                    
+                        if(isset($_POST['mail']) && isset($_POST['password']) && $_POST['mail'] !=null && $_POST['password'] != null ){
+                        $server_con=mysqli_connect('localhost','root','','netlib');
+                        $mail = $_POST['mail'];
+                        $password = $_POST['password'];
+                    
+                        $sql = "SELECT * FROM `user` WHERE mail='$mail' AND password='$password';";
+                        $query = mysqli_query($server_con,$sql);
+                        $assoc = mysqli_fetch_assoc($query);
+                           if(!isset($assoc['user_id'])){
+                                echo 'user not found';
+                            }else{
+                                setcookie("user_id", $assoc['user_id'],time() + (86400 * 30), "/Projects_Done_On_Lessons/PracowniaRepo/own_project/");
+                                 header('Location: ../../index.php');
+                            }
+                        }
+                    }
+                ?>
     </div>
 
 </body>

@@ -19,7 +19,8 @@
     <?php include_once './assets/components/loading.php' ?>
 
     <!-- Menu Bar -->
-    <?php include_once './assets/components/nav.php' ?>
+    <?php include_once './assets/components/nav.php' 
+    ?>
 
     <!-- Account BTN -->
     <?php include_once './assets/components/accaunt.php' ?>
@@ -30,16 +31,42 @@
         <section class="movie-card-container">
 
             <?php 
-            $sql = "SELECT * FROM `movie` ORDER BY 'date' LIMIT 10;";
-            $query = mysqli_query($server_con,$sql);
-            $assoc = mysqli_fetch_assoc($query);
-            if(isset($assoc)){
+            
+            
+            if(!isset($_GET['search'])){
+                $sql = "SELECT * FROM `movie` ORDER BY 'date' LIMIT 10;";
+                $query = mysqli_query($server_con,$sql);
+                $assoc = mysqli_fetch_assoc($query);
                 $query = mysqli_query($server_con,$sql);
                 while($assoc = mysqli_fetch_assoc($query)){
                     echo 
                     ' 
                     <div name="movie-card" class="movie-card">
-                        <a href="http://localhost/Websites_Xampp/Projects_Done_On_Lessons/PracowniaRepo/own_project/movie/'.$assoc['movie_id'].'">
+                        <a href="http://localhost/Projects_Done_On_Lessons/PracowniaRepo/own_project/movie/'.$assoc['movie_id'].'">
+                        <div class="image">
+                        <img src="'.$assoc['image'].'" alt="'.$assoc['title'].'">
+                        </div>
+                        <div class="title"><h3>
+                        '.$assoc['title'].'</h3>
+                        </div>
+                        <div class="date">
+                        '.$assoc['date'].'
+                        </div>
+                        </a>
+                    </div>
+                    
+                    ';
+                    echo $assoc['image'];
+                };
+            }elseif(isset($_GET['search'])){
+                $search=$_GET['search'];
+                $sql = "SELECT * FROM `movie` WHERE title LIKE '$search%' ORDER BY 'date' ";
+                $query = mysqli_query($server_con,$sql);
+                while($assoc = mysqli_fetch_assoc($query)){
+                    echo 
+                    ' 
+                    <div name="movie-card" class="movie-card">
+                        <a href="http://localhost/Projects_Done_On_Lessons/PracowniaRepo/own_project/movie/'.$assoc['movie_id'].'">
                         <div class="image">
                         <img src="'.$assoc['image'].'" alt="'.$assoc['title'].'">
                         </div>
@@ -53,6 +80,7 @@
                     </div>
                     ';
                 };
+            
             };
 
     

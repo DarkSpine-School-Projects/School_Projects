@@ -3,7 +3,8 @@
   animation: load-screen 2s ease-in-out forwards;
   position: fixed;
   text-align: center;
-  gap: 0px;
+  top: 0px;
+  left: 0px;
   height: 100vh;
   width: 100%;
   opacity: 100%;
@@ -214,8 +215,6 @@ nav ul li .search-btn:hover {
 .log-container {
   background: rgb(190, 43, 43);
   box-shadow: 0 0px 50px rgb(190, 43, 43);
-  backdrop-filter: blur(9.5px);
-  -webkit-backdrop-filter: blur(9.5px);
   border-radius: 10px;
   position: absolute;
   top: 50%;
@@ -224,6 +223,15 @@ nav ul li .search-btn:hover {
   min-height: 20vh;
   height: 40vh;
   width: 30%;
+  transition: all 0.2s ease-in-out;
+}
+.log-container h1 {
+  position: relative;
+  top: 10%;
+  text-align: center;
+}
+.log-container:hover {
+  box-shadow: 0 0px 30px rgb(190, 43, 43);
 }
 
 .log-container-flex {

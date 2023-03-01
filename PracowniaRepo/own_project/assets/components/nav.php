@@ -6,9 +6,11 @@
 
 <nav>
     <ul>
-        <li>
-            option
-        </li>
+        <a href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/">
+            <li>
+                Home
+            </li>
+        </a>
         <li>
             option
 
@@ -17,15 +19,11 @@
             option
         </li>
         <li>
-            <form action="POST">
+            <form method="GET">
                 <input type="text" name="search" class="search">
-                <button type='sumbit' name='search' class="search-btn">SEARCH</button>
+                <button type='sumbit' name='sumbit' class="search-btn">SEARCH</button>
             </form>
             <?php 
-            if(isset($search)){
-                $search=$_POST['search'];
-                $sql = "SELECT * FROM `movie` WHERE name like '$search%';";
-            };
             
             ?>
         </li>
