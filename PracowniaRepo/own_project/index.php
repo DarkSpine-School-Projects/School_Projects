@@ -40,9 +40,8 @@
                 $query = mysqli_query($server_con,$sql);
                 while($assoc = mysqli_fetch_assoc($query)){
                     echo 
-                    ' 
-                    <div name="movie-card" class="movie-card">
-                        <a href="http://localhost/Projects_Done_On_Lessons/PracowniaRepo/own_project/movie/'.$assoc['movie_id'].'">
+                    ' <a name="movie-card" class="movie-card" href="http://localhost/Projects_Done_On_Lessons/PracowniaRepo/own_project/movie/'.$assoc['movie_id'].'">
+                    <div >
                         <div class="image">
                         <img src="'.$assoc['image'].'" alt="'.$assoc['title'].'">
                         </div>
@@ -52,11 +51,11 @@
                         <div class="date">
                         '.$assoc['date'].'
                         </div>
-                        </a>
+
                     </div>
-                    
+                    </a>
                     ';
-                    echo $assoc['image'];
+                  echo $assoc['image'];
                 };
             }elseif(isset($_GET['search'])){
                 $search=$_GET['search'];
