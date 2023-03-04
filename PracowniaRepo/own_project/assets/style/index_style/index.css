@@ -219,7 +219,7 @@ nav ul li .search-btn:hover {
   fill: rgb(16, 16, 16);
 }
 .accaunt-btn:hover .login_desc {
-  left: 130%;
+  left: 150%;
   opacity: 100%;
 }
 .accaunt-btn svg {
@@ -229,7 +229,7 @@ nav ul li .search-btn:hover {
 .login_desc {
   position: absolute;
   top: 50%;
-  left: 100%;
+  left: 130%;
   transform: translateY(-50%);
   opacity: 0%;
   pointer-events: none;
@@ -309,7 +309,7 @@ nav ul li .search-btn:hover {
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   min-height: 20vh;
-  height: 40vh;
+  height: 50vh;
   width: 30%;
   transition: all 0.2s ease-in-out;
 }

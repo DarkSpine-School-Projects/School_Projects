@@ -34,7 +34,7 @@
       fill: $body_color_dark;
     }
     .login_desc {
-      left: 130%;
+      left: 150%;
       opacity: 100%;
     }
   }
@@ -46,7 +46,7 @@
 .login_desc {
   position: absolute;
   top: 50%;
-  left: 100%;
+  left: 130%;
   transform: translateY(-50%);
   opacity: 0%;
   pointer-events: none;

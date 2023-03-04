@@ -38,7 +38,7 @@
                         </form>
                         '; 
                     } 
-                }elseif(isset($_COOKIE['user_id'])){
+                }elseif(!isset($_COOKIE['user_id'])){
                     echo
                     '
                     <h1>Create Account</h1>
@@ -79,14 +79,25 @@
                         }
                     }
                     if(isset($_POST['mail']) && isset($_POST['password']) && isset($_POST['nick']) && $_POST["password"] === $_POST["re_password"]){
+                        
                         $server_con=mysqli_connect('localhost','root','','netlib');
                         $nick = $_POST['nick'];
                         $mail = $_POST['mail'];
-                        $password = $_POST['password'];
-                        $user_id = uniqid('user');                
-                        $sql = "INSERT INTO `user`(`nick`, `mail`, `password`, `user_id`, `role`) VALUES ('$nick','$mail','$password','$user_id','user');";
-                        mysqli_query($server_con,$sql);
+                        $sql = "SELECT `nick`, `mail` FROM `user` WHERE `nick`='$nick' OR `mail`='$mail';";
+                        $query = mysqli_query($server_con,$sql);
+                        $assoc = mysqli_fetch_assoc($query);
+                        if($assoc['nick']!=null && $assoc['mail']!=null){
+                            echo'Mail Or Nick Aleready Used';
+                        }
+                        if($assoc['nick']==null || $assoc['mail'] == null){
+                            $nick = $_POST['nick'];
+                            $mail = $_POST['mail'];
+                            $password = $_POST['password'];
+                            $user_id = uniqid('user');                
+                            $sql = "INSERT INTO `user`(`nick`, `mail`, `password`, `user_id`, `role`) VALUES ('$nick','$mail','$password','$user_id','user');";
+                            mysqli_query($server_con,$sql);
                             header('Location: /Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/login.php');
+                        }
                     }
                 }
                 ?>
