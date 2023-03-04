@@ -14,6 +14,10 @@ if(!isset($_COOKIE['user_id'])){
 </a>
 ';
 }else{
+    if(isset($_POST["logout"])){
+    setcookie("user_id",'user63ff71fga2v57',time() - 3600, "/Projects_Done_On_Lessons/PracowniaRepo/own_project/");
+    header('Location: /Projects_Done_On_Lessons/PracowniaRepo/own_project/');
+}
       echo
     '
     <button onClick="show_option()" class="accaunt-btn">
@@ -23,8 +27,11 @@ if(!isset($_COOKIE['user_id'])){
         </svg>
     </button>
     <div onClick="hidde_option()" id="option_container_bg"></div>
-
         <div id="option_container">
+            
+               
+                 <svg onClick="hidde_option()" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill:white; height:5vh;   position: absolute !important; right:5%; top:5%; cursor:pointer;"><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z"/></svg>   
+                
             <a href="http://localhost/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/user_seting.php">
                 <div>
                     <h3>Accaunt Setting</h3>
@@ -75,10 +82,6 @@ if(!isset($_COOKIE['user_id'])){
 ';
 };
    
-if(isset($_POST["logout"])){
-   setcookie("user_id",'',time() -3600, "/Projects_Done_On_Lessons/PracowniaRepo/own_project/");
-   header('Location: ./');
-}
 
 
 ?>

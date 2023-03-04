@@ -204,9 +204,6 @@ nav ul li .search-btn:hover {
   animation: show-accaunt-btn 0.5s ease-in-out forwards 2s;
   z-index: 1003;
 }
-.accaunt-btn svg {
-  pointer-events: none;
-}
 @keyframes show-accaunt-btn {
   100% {
     bottom: 5vh;
@@ -364,11 +361,10 @@ nav ul li .search-btn:hover {
   outline: none;
   background-color: rgb(16, 16, 16);
 }
-.log-container-flex div .mail {
-  width: 100%;
-  padding: 5px;
-}
-.log-container-flex div .password {
+.log-container-flex div .mail,
+.log-container-flex div .password,
+.log-container-flex div .re_password,
+.log-container-flex div .nick {
   width: 100%;
   padding: 5px;
 }
@@ -390,6 +386,14 @@ nav ul li .search-btn:hover {
 }
 .log-container-flex a {
   text-decoration: underline;
+}
+
+.reg-container {
+  height: 70vh !important;
+}
+
+.log-container-flex {
+  row-gap: 40px !important;
 }
 
 .movie-card {

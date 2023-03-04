@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
-    <link rel="stylesheet" href="/assets/style/index_style/index.css">
+    <link rel="stylesheet" href="../style/index_style/index.css">
     <style>
     body {
         background: url(https://wallpaperaccess.com/full/8406764.gif);
@@ -26,29 +26,51 @@
 
 
         <h1>Log In</h1>
-        <form class="log-container-flex" method="POST">
-            <div class="mail-container">
-                MAIL
-                <br>
-                <input type="mail" id="mail" class="mail" name="mail">
-            </div>
 
-            <div class="passowrd-container">
-                PASSWORD
-                <br>
-                <input type="password" id="password" class="password" name="password">
-            </div>
-            <button type="submit">LOGIN</button>
+        <?php
+        $server_con=mysqli_connect('localhost','root','','netlib'); 
+        if(isset($_COOKIE['user_id'])){
+            $loged_check = "SELECT `user_id` FROM `user` WHERE `user_id`= '".$_COOKIE['user_id']."';";
+            $query_loged = mysqli_query($server_con, $loged_check);
+            $acces_loged = mysqli_fetch_assoc($query_loged);
+            if($_COOKIE['user_id'] == $acces_loged['user_id']){
+                echo'
+                <form class="log-container-flex" method="POST">
+                        You are Already logged
+                </form>
+                '; 
+            } 
+        }elseif(!isset($_COOKIE['user_id'])){
+                echo'<form class="log-container-flex" method="POST">
+                        <div class="mail-container">
+                        MAIL
+                        <br>
+                        <input type="mail" id="mail" class="mail" name="mail">
+                    </div>
+
+                    <div class="passowrd-container">
+                        PASSWORD
+                        <br>
+                        <input type="password" id="password" class="password" name="password">
+                    </div>
+                    <button name="sumbit_log" type="submit">LOGIN</button>
 
 
-            <a href="./registration.php"><small>Registration</small></a>
-        </form>
-
-        <?php 
-              
-
+                    <a href="./registration.php"><small>Registration</small></a>
+                </form>';
+                if(isset($_POST['sumbit_log'])){
+                        if($_POST['mail']=='' && $_POST['password']==''){
+                            echo 'Mail And Password Missing';
+                        }else{
+                            if($_POST['mail']=='' && isset($_POST['password'])){
+                                echo 'Mail Missing';
+                                }elseif($_POST['password']=='' && isset($_POST['mail']) ){
+                                    echo 'Password Missing';
+                            }
+                        }
+                    }
                     if(!isset($_POST['mail']) or !isset($_POST['password']) ){
-                        echo '';
+                        
                     }else{
                     
                         if(isset($_POST['mail']) && isset($_POST['password']) && $_POST['mail'] !=null && $_POST['password'] != null ){
@@ -60,14 +82,18 @@
                         $query = mysqli_query($server_con,$sql);
                         $assoc = mysqli_fetch_assoc($query);
                            if(!isset($assoc['user_id'])){
-                                echo 'user not found';
+                                echo 'Wrong Mail Or Password';
                             }else{
                                 setcookie("user_id", $assoc['user_id'],time() + (86400 * 30), "/Projects_Done_On_Lessons/PracowniaRepo/own_project/");
-                                 header('Location: /');
+                                 header('Location: /Projects_Done_On_Lessons/PracowniaRepo/own_project/');
                             }
                         }
                     }
-                ?>
+            }  
+     
+            
+        ?>
+
     </div>
 
 </body>

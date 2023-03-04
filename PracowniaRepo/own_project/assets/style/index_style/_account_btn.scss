@@ -16,9 +16,7 @@
   transition: all 0.2s ease-in-out;
   animation: show-accaunt-btn 0.5s ease-in-out forwards 2s;
   z-index: 1003;
-  svg {
-    pointer-events: none;
-  }
+
   @keyframes show-accaunt-btn {
     0% {
     }
@@ -99,7 +97,6 @@
   gap: 50px;
   transition: all 0.2s ease-in-out;
 }
-
 .option_show {
   background: rgba(255, 255, 255, 0.027) !important;
   backdrop-filter: blur(10.5px) !important;
