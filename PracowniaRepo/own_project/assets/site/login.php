@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../style/index_style/index.css">
     <style>
     body {
-        background: url(https://wallpaperaccess.com/full/8406764.gif);
+
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -20,11 +20,19 @@
 </head>
 
 <body>
-
+    <section class="header">
+        <div id="vid-gradient" z-index="-2"></div>
+        <video id="vid-main" autoplay muted loop>
+            <source id="vid-main-source"
+                src="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/vid/loading.mp4" type="video/mp4" />
+        </video>
+    </section>
     <?php include_once '../components/loading.php' ?>
     <div class="log-container">
 
-
+        <a href="../../" target="" rel="noopener noreferrer">
+            <img src="../svg/iconmonstr-caret-left-filled.svg" class="back_arrow_login" alt="">
+        </a>
         <h1>Log In</h1>
 
         <?php

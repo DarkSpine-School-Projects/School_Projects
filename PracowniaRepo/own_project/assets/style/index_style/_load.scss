@@ -1,6 +1,9 @@
 @import "./variebles";
-
+header {
+  height: 100vh;
+}
 .load-container {
+  letter-spacing: 10px;
   animation: $animation_time_load_con;
   position: fixed;
   text-align: center;
@@ -10,20 +13,21 @@
   width: 100%;
   opacity: 100%;
   pointer-events: none;
-  background-color: rgb(0, 0, 0);
   z-index: 1000;
   .content-load {
     position: relative;
     top: 50vh;
     transform: translateY(-50%);
     hr {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-52%);
       width: clamp(15rem, 15%, 120vw);
     }
   }
   @keyframes load-screen {
     0% {
       pointer-events: all;
-      background-color: rgb(0, 0, 0);
     }
     20% {
       opacity: 100%;
@@ -43,13 +47,58 @@
       filter: blur(44px);
       opacity: 0%;
       pointer-events: none;
-      background-color: rgb(0, 0, 0);
+      transform: scale(120%);
+    }
+  }
+}
+
+#vid-gradient-top {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  object-fit: cover;
+  height: 100vh;
+  background-position-y: 500vh;
+  z-index: 3;
+  background: $body_color_dark;
+  background: linear-gradient(
+    180deg,
+    rgba(16, 16, 16, 1) 0%,
+    rgba(16, 16, 16, 1) 15%,
+    rgba(16, 16, 16, 0) 50%,
+    rgba(16, 16, 16, 1) 80%,
+    rgba(16, 16, 16, 1) 100%
+  );
+  animation: load-screen-vid 2s ease-in-out;
+  @keyframes load-screen-vid {
+    0% {
+      pointer-events: all;
+    }
+    20% {
+      opacity: 100%;
+    }
+
+    90% {
+      opacity: 100%;
+      filter: blur(0px);
+    }
+    95% {
+      transform: scale(100%);
+    }
+    99% {
+      pointer-events: all;
+    }
+    100% {
+      filter: blur(44px);
+      opacity: 0%;
+      pointer-events: none;
       transform: scale(120%);
     }
   }
 }
 
 .word-load {
+  z-index: 1000;
   width: max-content;
   font-size: clamp(0.1vw, 350%, 120vw);
 }

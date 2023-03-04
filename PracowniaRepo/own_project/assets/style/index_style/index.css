@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+header {
+  height: 100vh;
+}
+
 .load-container {
+  letter-spacing: 10px;
   animation: load-screen 2s ease-in-out forwards;
   position: fixed;
   text-align: center;
@@ -9,7 +14,6 @@
   width: 100%;
   opacity: 100%;
   pointer-events: none;
-  background-color: rgb(0, 0, 0);
   z-index: 1000;
 }
 .load-container .content-load {
@@ -18,12 +22,14 @@
   transform: translateY(-50%);
 }
 .load-container .content-load hr {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-52%);
   width: clamp(15rem, 15%, 120vw);
 }
 @keyframes load-screen {
   0% {
     pointer-events: all;
-    background-color: rgb(0, 0, 0);
   }
   20% {
     opacity: 100%;
@@ -42,12 +48,50 @@
     filter: blur(44px);
     opacity: 0%;
     pointer-events: none;
-    background-color: rgb(0, 0, 0);
+    transform: scale(120%);
+  }
+}
+
+#vid-gradient-top {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100vh;
+  background-position-y: 500vh;
+  z-index: 3;
+  background: rgb(16, 16, 16);
+  background: linear-gradient(180deg, rgb(16, 16, 16) 0%, rgb(16, 16, 16) 15%, rgba(16, 16, 16, 0) 50%, rgb(16, 16, 16) 80%, rgb(16, 16, 16) 100%);
+  animation: load-screen-vid 2s ease-in-out;
+}
+@keyframes load-screen-vid {
+  0% {
+    pointer-events: all;
+  }
+  20% {
+    opacity: 100%;
+  }
+  90% {
+    opacity: 100%;
+    filter: blur(0px);
+  }
+  95% {
+    transform: scale(100%);
+  }
+  99% {
+    pointer-events: all;
+  }
+  100% {
+    filter: blur(44px);
+    opacity: 0%;
+    pointer-events: none;
     transform: scale(120%);
   }
 }
 
 .word-load {
+  z-index: 1000;
   width: -moz-max-content;
   width: max-content;
   font-size: clamp(0.1vw, 350%, 120vw);
@@ -91,15 +135,25 @@
   }
 }
 nav {
+  background: rgb(16, 16, 16);
+  background: linear-gradient(0deg, rgba(16, 16, 16, 0) 0%, rgb(16, 16, 16) 10%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  height: 100%;
+  list-style: none;
   z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
-  background: rgb(180, 15, 15);
   width: 100%;
   min-height: 5vh;
   height: 10vh;
-  box-shadow: 0px 0px 20px rgb(16, 16, 16);
   opacity: 0%;
   animation: nav_show 0.5s ease-in-out 2s forwards;
 }
@@ -111,7 +165,11 @@ nav {
     opacity: 100%;
   }
 }
+nav .li-search {
+  transform: translateX(35%);
+}
 nav ul {
+  width: 70%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -123,6 +181,21 @@ nav ul {
   height: 100%;
   list-style: none;
   font-size: 110%;
+}
+nav ul .option-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  height: 100%;
+  list-style: none;
+  font-size: 110%;
+  gap: 40%;
+  width: 10%;
 }
 nav ul li {
   color: white;
@@ -154,8 +227,10 @@ nav ul li .underline {
   opacity: 0%;
 }
 nav ul li .search {
+  color: gray;
   background-color: rgb(16, 16, 16);
   border: 1px solid rgb(16, 16, 16);
+  box-shadow: 0px 0px 6px black;
   padding: 7px;
   border-radius: 3px;
   transition: all 0.18s ease-in-out;
@@ -171,6 +246,7 @@ nav ul li .search:focus {
   background-color: white;
 }
 nav ul li .search-btn {
+  box-shadow: 0px 0px 6px black;
   color: white;
   background-color: rgb(16, 16, 16);
   border: 1px solid rgb(16, 16, 16);
@@ -195,12 +271,13 @@ nav ul li .search-btn:hover {
   background: rgb(180, 15, 15);
   position: fixed;
   bottom: 2vh;
-  left: 5%;
+  left: 2%;
+  top: 1%;
   width: -moz-max-content;
   width: max-content;
   padding: 4px 4px 1px 4px;
   border-radius: 3%;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   animation: show-accaunt-btn 0.5s ease-in-out forwards 2s;
   z-index: 1003;
 }
@@ -212,6 +289,7 @@ nav ul li .search-btn:hover {
   }
 }
 .accaunt-btn:hover {
+  box-shadow: 0px 0px 4px white;
   cursor: pointer;
   background: white;
 }
@@ -219,21 +297,35 @@ nav ul li .search-btn:hover {
   fill: rgb(16, 16, 16);
 }
 .accaunt-btn:hover .login_desc {
-  left: 150%;
+  top: 98%;
   opacity: 100%;
+  padding: 10px 0px;
+  box-shadow: 0px 0px 4px white;
 }
 .accaunt-btn svg {
   fill: white;
 }
 
 .login_desc {
+  padding: 3px 0px;
+  border-radius: 0px 0px 2px 2px;
+  box-shadow: 0px 0px 4px white;
+  text-align: center;
   position: absolute;
-  top: 50%;
-  left: 130%;
-  transform: translateY(-50%);
+  width: 100%;
+  top: 97%;
+  left: 50%;
+  background-color: white;
+  color: rgb(16, 16, 16);
+  transform: translateX(-50%);
   opacity: 0%;
   pointer-events: none;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-size: 70%;
+  display: flex;
+  justify-content: center;
 }
 
 .logout-btn {
@@ -241,6 +333,10 @@ nav ul li .search-btn:hover {
   background-color: white;
   cursor: pointer;
   font-size: larger;
+  transition: all 0.12s ease-in-out;
+}
+.logout-btn:hover {
+  background-color: rgb(180, 15, 15);
 }
 
 #option_container_bg {
@@ -300,10 +396,26 @@ nav ul li .search-btn:hover {
   width: 100%;
 }
 
+.close-btn {
+  transition: all 0.1s ease-in-out !important;
+  fill: white;
+  height: 5vh;
+  position: absolute !important;
+  right: 5%;
+  top: 5%;
+  cursor: pointer;
+}
+.close-btn:hover {
+  fill: rgb(180, 15, 15);
+}
+
 .log-container {
-  background: rgb(180, 15, 15);
-  box-shadow: 0 0px 50px rgb(180, 15, 15);
-  border-radius: 10px;
+  z-index: 10;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background: rgba(16, 16, 16, 0.336);
+  box-shadow: 0 0px 30px black;
+  border-radius: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -319,7 +431,7 @@ nav ul li .search-btn:hover {
   text-align: center;
 }
 .log-container:hover {
-  box-shadow: 0 0px 30px rgb(180, 15, 15);
+  box-shadow: 0 0px 20px black;
 }
 
 .log-container-flex {
@@ -327,15 +439,13 @@ nav ul li .search-btn:hover {
   height: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 10px;
   justify-content: center;
   align-self: center;
   justify-items: center;
   align-items: center;
   align-content: center;
-}
-.log-container-flex label {
-  margin: 0;
+  line-height: 30px;
 }
 .log-container-flex div {
   justify-self: center;
@@ -346,20 +456,22 @@ nav ul li .search-btn:hover {
   color: rgb(128, 128, 128);
   outline: none;
   background-color: white;
+  box-shadow: 0px 0px 4px white;
   border: 1px solid white;
   padding: 7px;
-  border-radius: 3px;
+  border-radius: 1px;
   transition: all 0.18s ease-in-out;
 }
 .log-container-flex div input:hover {
   background-color: rgb(16, 16, 16);
   border: 1px solid rgb(16, 16, 16);
-  box-shadow: 0px 0px 10px rgb(16, 16, 16);
+  box-shadow: 0px 0px 6px black;
 }
 .log-container-flex div input:focus {
   border: 1px solid rgb(16, 16, 16);
   outline: none;
   background-color: rgb(16, 16, 16);
+  box-shadow: 0px 0px 6px black;
 }
 .log-container-flex div .mail,
 .log-container-flex div .password,
@@ -369,6 +481,7 @@ nav ul li .search-btn:hover {
   padding: 5px;
 }
 .log-container-flex button {
+  box-shadow: 0px 0px 6px black;
   width: 40%;
   color: white;
   background-color: rgb(16, 16, 16);
@@ -388,6 +501,21 @@ nav ul li .search-btn:hover {
   text-decoration: underline;
 }
 
+.back_arrow_login {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  height: 4.6vh;
+  fill: white;
+  box-shadow: 0px 0px 4px white;
+  border-radius: 100%;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.back_arrow_login:hover {
+  box-shadow: 0px 0px 5px white;
+}
+
 .reg-container {
   height: 70vh !important;
 }
@@ -397,9 +525,10 @@ nav ul li .search-btn:hover {
 }
 
 .movie-card {
+  line-height: 30px;
   z-index: 998;
   box-shadow: 5px 5px 20px rgb(0, 0, 0);
-  border-radius: 4px;
+  border-radius: 2px;
   cursor: pointer;
   display: flex;
   min-width: 15%;
@@ -415,7 +544,7 @@ nav ul li .search-btn:hover {
   gap: 20px;
 }
 .movie-card:hover {
-  box-shadow: 0px 0px 20px rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
   background-color: white;
 }
 .movie-card:hover .title {

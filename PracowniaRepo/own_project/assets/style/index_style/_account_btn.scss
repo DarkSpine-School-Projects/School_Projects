@@ -9,11 +9,12 @@
   background: $nav_color;
   position: fixed;
   bottom: 2vh;
-  left: 5%;
+  left: 2%;
+  top: 1%;
   width: max-content;
   padding: 4px 4px 1px 4px;
   border-radius: 3%;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   animation: show-accaunt-btn 0.5s ease-in-out forwards 2s;
   z-index: 1003;
 
@@ -28,14 +29,17 @@
   }
 
   &:hover {
+    box-shadow: 0px 0px 4px $option_color;
     cursor: pointer;
     background: $option_color;
     svg {
       fill: $body_color_dark;
     }
     .login_desc {
-      left: 150%;
+      top: 98%;
       opacity: 100%;
+      padding: 10px 0px;
+      box-shadow: 0px 0px 4px $option_color;
     }
   }
 
@@ -44,19 +48,36 @@
   }
 }
 .login_desc {
+  padding: 3px 0px;
+  border-radius: 0px 0px 2px 2px;
+  box-shadow: 0px 0px 4px $option_color;
+  text-align: center;
   position: absolute;
-  top: 50%;
-  left: 130%;
-  transform: translateY(-50%);
+  width: 100%;
+  top: 97%;
+  left: 50%;
+  background-color: $option_color;
+  color: $body_color_dark;
+  transform: translateX(-50%);
   opacity: 0%;
   pointer-events: none;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-size: 70%;
+  display: flex;
+  justify-content: center;
 }
+
 .logout-btn {
   padding: 5px 20px;
   background-color: $option_color;
   cursor: pointer;
   font-size: larger;
+  transition: all 0.12s ease-in-out;
+  &:hover {
+    background-color: $nav_color;
+  }
 }
 #option_container_bg {
   background: rgba(255, 255, 255, 0.027);
@@ -111,4 +132,18 @@
   overflow: hidden;
   height: 100vh;
   width: 100%;
+}
+.account_setting {
+}
+.close-btn {
+  transition: all 0.1s ease-in-out !important;
+  fill: white;
+  height: 5vh;
+  position: absolute !important;
+  right: 5%;
+  top: 5%;
+  cursor: pointer;
+  &:hover {
+    fill: $nav_color;
+  }
 }

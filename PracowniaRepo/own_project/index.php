@@ -52,7 +52,7 @@
                         '.$assoc['title'].'</h3>
                         </div>
                         <div class="date">
-                        '.$assoc['date'].'
+                        Relase: '.$assoc['date'].'
                         </div>
 
                     </div>
@@ -75,7 +75,7 @@
                         '.$assoc['title'].'</h3>
                         </div>
                         <div class="date">
-                        '.$assoc['date'].'
+                        Relase: '.$assoc['date'].'
                         </div>
                         </a>
                     </div>

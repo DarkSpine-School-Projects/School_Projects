@@ -1,9 +1,11 @@
 $btn-log-width: 70%;
 
 .log-container {
-  background: $nav_color;
-  box-shadow: 0 0px 50px $nav_color;
-  border-radius: 10px;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(16, 16, 16, 0.336);
+  box-shadow: 0 0px 30px black;
+  border-radius: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -18,7 +20,7 @@ $btn-log-width: 70%;
     text-align: center;
   }
   &:hover {
-    box-shadow: 0 0px 30px $nav_color;
+    box-shadow: 0 0px 20px black;
   }
 }
 .log-container-flex {
@@ -26,15 +28,13 @@ $btn-log-width: 70%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 10px;
   justify-content: center;
   align-self: center;
   justify-items: center;
   align-items: center;
   align-content: center;
-  label {
-    margin: 0;
-  }
+  line-height: 30px;
   div {
     justify-self: center;
     align-self: center;
@@ -43,20 +43,21 @@ $btn-log-width: 70%;
       color: rgb(128, 128, 128);
       outline: none;
       background-color: $option_color;
+      box-shadow: 0px 0px 4px $option_color;
       border: 1px solid $option_color;
       padding: 7px;
-      border-radius: 3px;
+      border-radius: 1px;
       transition: all 0.18s ease-in-out;
       &:hover {
         background-color: $body_color_dark;
         border: 1px solid $body_color_dark;
-
-        box-shadow: 0px 0px 10px $body_color_dark;
+        box-shadow: 0px 0px 6px black;
       }
       &:focus {
         border: 1px solid $body_color_dark;
         outline: none;
         background-color: $body_color_dark;
+        box-shadow: 0px 0px 6px black;
       }
     }
 
@@ -69,6 +70,7 @@ $btn-log-width: 70%;
     }
   }
   button {
+    box-shadow: 0px 0px 6px black;
     width: 40%;
     color: $option_color;
     background-color: $body_color_dark;
@@ -86,5 +88,19 @@ $btn-log-width: 70%;
   }
   a {
     text-decoration: underline;
+  }
+}
+.back_arrow_login {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  height: 4.6vh;
+  fill: $option_color;
+  box-shadow: 0px 0px 4px $option_color;
+  border-radius: 100%;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0px 0px 5px $option_color;
   }
 }
