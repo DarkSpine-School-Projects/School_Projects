@@ -1,0 +1,100 @@
+@import "./variebles";
+nav {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $nav_color;
+  width: 100%;
+  min-height: 5vh;
+  height: 10vh;
+  box-shadow: 0px 0px 20px $body_color_dark;
+  opacity: 0%;
+  animation: $show_nav;
+  @keyframes nav_show {
+    0% {
+      transform: translateY(-30%);
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    height: 100%;
+    list-style: none;
+    font-size: 110%;
+    li {
+      color: $option_color;
+      transition: all 0.14s ease-in-out;
+      text-shadow: 0px 0px 2px $option_color;
+      &:hover {
+        color: rgb(255, 255, 255);
+        text-shadow: 0px 0px 3px $option_color;
+        cursor: pointer;
+
+        .underline {
+          height: 3px;
+          background: $option_color !important;
+          opacity: 100%;
+          transform: translateY(150%);
+          box-shadow: 0px 0px 20px $option_color !important;
+        }
+      }
+      .underline {
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0px 0px 8px $option_color !important;
+        transform: translateY(300%);
+        height: 3px;
+        width: 100%;
+        background: $option_color !important;
+        pointer-events: none;
+        border: none !important;
+        border-radius: none !important;
+        opacity: 0%;
+      }
+      .search {
+        background-color: $body_color_dark;
+        border: 1px solid $body_color_dark;
+        padding: 7px;
+        border-radius: 3px;
+        transition: all 0.18s ease-in-out;
+        &:hover {
+          background-color: $option_color;
+          border: 1px solid $option_color;
+          box-shadow: 0px 0px 10px $option_color;
+        }
+        &:focus {
+          border: 1px solid $option_color;
+          outline: none;
+          background-color: $option_color;
+        }
+      }
+      .search-btn {
+        color: $option_color;
+        background-color: $body_color_dark;
+        border: 1px solid $body_color_dark;
+        padding: 7px;
+        border-radius: 3px;
+        transition: all 0.14s ease-in-out;
+        &:hover {
+          background-color: $option_color;
+          border: 1px solid $option_color;
+          box-shadow: 0px 0px 10px $option_color;
+          color: $body_color_dark;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  @media (max-width: 900px) {
+  }
+}

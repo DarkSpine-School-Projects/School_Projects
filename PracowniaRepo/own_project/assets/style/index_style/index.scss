@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+@import "./load";
+@import "./variebles";
+@import "./nav";
+@import "./account_btn";
+@import "../log_style/login";
+@import "../log_style/reg";
+@import "./movie_card";
+@import "./header";
+
+*,
+html,
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Comfortaa", cursive;
+}
+html {
+  width: 100%;
+  min-height: 100vh;
+}
+body {
+  height: 100vh;
+  background-color: $body_color_dark;
+  color: $option_color;
+} /*# sourceMappingURL=index.css.map */
+
+a {
+  color: $option_color;
+  text-decoration: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+
+  background: transparent;
+  top: 100px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $body_color_dark;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $option_color;
+  top: 100px;
+  position: fixed;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
+
+::-webkit-scrollbar-track-piece:start {
+  margin-top: 10vh;
+}

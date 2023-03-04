@@ -1,0 +1,22 @@
+#vid-main {
+  pointer-events: none;
+  width: 100%;
+  object-fit: cover;
+  height: 67vh;
+  z-index: 2;
+}
+
+#vid-gradient {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  object-fit: cover;
+  height: 67vh;
+  z-index: 3;
+  background: $body_color_dark;
+  background: linear-gradient(
+    180deg,
+    rgba(16, 16, 16, 0) 0%,
+    rgba(16, 16, 16, 1) 100%
+  );
+}
