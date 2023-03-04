@@ -1,6 +1,6 @@
 <nav>
     <ul>
-        <a href="//index.php">
+        <a href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/">
             <li>
                 Home
                 <div class="underline"></div>
@@ -14,9 +14,9 @@
             if($_COOKIE['user_id'] == $acces_admin['user_id']){
                 echo 
                 '
-                <a href="/assets/site/admin.php">
+                <a href="./assets/site/admin.php">
                     <li>
-                        admin
+                        Admin
                         <div class="underline"></div>
                     </li>
                 </a>
@@ -27,12 +27,12 @@
         }
         ?>
         <li>
-            option
+            Movies
             <div class="underline"></div>
 
         </li>
         <li>
-            option
+            Series
             <div class="underline"></div>
         </li>
         <li>
