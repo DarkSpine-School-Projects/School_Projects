@@ -23,7 +23,8 @@
         justify-content: center;
         align-items: center;
         row-gap: 20px;
-        max-height: 80vh;
+
+        min-height: 100vh;
         overflow-y: scroll;
     }
 
@@ -105,8 +106,9 @@
                 $acces_admin = mysqli_fetch_assoc($query_admin);
                 if($_COOKIE['user_id'] == $acces_admin['user_id']){
                     echo'
-            
+                    
                     <form class="log-container reg-container  flex-admin-container" action="" method="POST" enctype="multipart/form-data">
+                    <h2>ADD MOVIE</h2>
                         <a href="../../" target="" rel="noopener noreferrer">
                             <img src="../svg/iconmonstr-caret-left-filled.svg" class="back_arrow_login" alt="">
                         </a>
@@ -118,7 +120,6 @@
                             <option value="horror">horror</option>
                         
                         </select>
-                        image_name<input type="text" name="image_name" class="image_name" required>
                         image_url<input type="text" name="image_url" class="image_url" required>
                         <button type="sumbit" name="sumbit_vid">SUMBIT</button>
                         <script src="../script/Upload_image.js"></script>
@@ -142,10 +143,10 @@
                             $add_date = date("Y-m-d");
                             $image_url = $_POST['image_url'];
                             $image_name = $_POST['image_name'];
-                            $cloudinary->uploadApi()->upload("$image_url",['public_id' => "$image_name"]);
+                            $cloudinary->uploadApi()->upload("$image_url",['public_id' => "$movie_id"]);
                             
                             //$cloudinary->image("$image_name")->resize(Resize::fill(100, 150))->toUrl();
-                            $poster_link=$cloudinary->image("$image_name")->toUrl();
+                            $poster_link=$cloudinary->image("$movie_id")->toUrl();
                             
                             $sql="INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`, `img_link`) VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date', '$poster_link');";
                             $myFile = "../movie/$movie_id.php"; 
@@ -155,7 +156,7 @@
                             fclose($fh);
                             $query=mysqli_query($conn, $sql);
                             
-                            //header('location: ./admin.php');
+                            header('location: ./admin.php');
                              
                         }
                     }

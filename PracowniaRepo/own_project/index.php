@@ -38,7 +38,7 @@
             
             if(!isset($_GET['search']) || $_GET['search']==''){
                 echo' <h1 class="title-new-added"> Latest Added Videos </h1>';
-                $sql = "SELECT * FROM `movie` ORDER BY 'add_date' LIMIT 2;";
+                $sql = "SELECT * FROM `movie` ORDER BY 'add_date' DESC LIMIT 10 ;";
                 $query = mysqli_query($server_con,$sql);
                 $assoc = mysqli_fetch_assoc($query);
                 $query = mysqli_query($server_con,$sql);
@@ -48,7 +48,7 @@
                     <a name="movie-card" class="movie-card" href="./assets/movie/'.$assoc['movie_id'].'.php">
                     <div >
                         <div class="image">
-                        <img src="" alt="'.$assoc['title'].'">
+                        <img src="'.$assoc['img_link'].'" alt="'.$assoc['title'].'">
                         </div>
                         <div class="title"><h3>
                         '.$assoc['title'].'</h3>
@@ -63,7 +63,7 @@
                 };
             }elseif(isset($_GET['search'])){
                 $search=$_GET['search'];
-                $sql = "SELECT * FROM `movie` WHERE title LIKE '$search%' ORDER BY 'date' ";
+                $sql = "SELECT * FROM `movie` WHERE title LIKE '$search%' ORDER BY 'date' DESC";
                 $query = mysqli_query($server_con,$sql);
                 while($assoc = mysqli_fetch_assoc($query)){
                     echo 
@@ -71,7 +71,7 @@
                     <div name="movie-card" class="movie-card">
                         <a href="./assets/movie/'.$assoc['movie_id'].'.php">
                         <div class="image">
-                        <img src="" alt="'.$assoc['title'].'">
+                        <img src="'.$assoc['img_link'].'" alt="'.$assoc['title'].'">
                         </div>
                         <div class="title"><h3>
                         '.$assoc['title'].'</h3>
