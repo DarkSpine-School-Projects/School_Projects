@@ -132,6 +132,10 @@ nav {
       }
     }
   }
-  @media (max-width: 900px) {
-  }
+}
+.title-new-added {
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  transform: translateX(-50%);
 }

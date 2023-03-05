@@ -23,20 +23,45 @@
         justify-content: center;
         align-items: center;
         row-gap: 20px;
+        max-height: 80vh;
+        overflow-y: scroll;
+    }
+
+    .flex-admin-container::-webkit-scrollbar-track-piece:start {
+        margin-top: 0vh;
+
     }
 
     input,
     select,
     button {
-        height: 30px;
+        min-height: 30px;
         width: 80%;
 
 
     }
 
+    button {
+        cursor: pointer;
+        background-color: rgb(16, 16, 16);
+        color: white;
+        box-shadow: 0px 0px 8px black;
+        padding: 12px;
+        border: none;
+        transition: all .12s ease-in-out;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: white;
+        color: rgb(16, 16, 16);
+        box-shadow: 0px 0px 5px white;
+        padding: 12px;
+    }
+
     .desc {
         min-height: 10vh;
-        max-height: 20vh;
+        max-height: 10vh;
         max-width: 80%;
         min-width: 80%;
     }
@@ -46,6 +71,7 @@
 </head>
 
 <body>
+
     <section class="header">
         <div id="vid-gradient" z-index="-2"></div>
         <video id="vid-main" autoplay muted loop>
@@ -53,6 +79,22 @@
                 src="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/vid/loading.mp4" type="video/mp4" />
         </video>
     </section>
+    <?php     
+    require_once(__DIR__ . '../../../vendor/autoload.php'); 
+    
+      use Cloudinary\Cloudinary;
+    use Cloudinary\Transformation\Resize;
+
+                    $cloudinary = new Cloudinary(
+                        [
+                            'cloud' => [
+                                'cloud_name' => 'djg4nn4ik',
+                                'api_key'    => '248118483455672',
+                                'api_secret' => 'P_4GNtxsO5bsk_HqX9HH1fJtnyg',
+                            ],
+                        ]
+                    );
+    ?>
     <?php include_once '../components/loading.php' ?>
     <div class="">
         <?php
@@ -76,9 +118,14 @@
                             <option value="horror">horror</option>
                         
                         </select>
+                        image_name<input type="text" name="image_name" class="image_name" required>
+                        image_url<input type="text" name="image_url" class="image_url" required>
                         <button type="sumbit" name="sumbit_vid">SUMBIT</button>
+                        <script src="../script/Upload_image.js"></script>
                     </form>
                     ';
+
+
 
                     $conn=mysqli_connect('localhost','root','','netlib');
                     if(isset($_POST["sumbit_vid"])){
@@ -93,17 +140,23 @@
                             $date=$_POST['date'];
                             $category=$_POST['category'];
                             $add_date = date("Y-m-d");
-                            $sql="INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`) VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date');";
-
-
-
-                            $myFile = "../movie/$movie_id.php"; // or .php   
+                            $image_url = $_POST['image_url'];
+                            $image_name = $_POST['image_name'];
+                            $cloudinary->uploadApi()->upload("$image_url",['public_id' => "$image_name"]);
+                            
+                            //$cloudinary->image("$image_name")->resize(Resize::fill(100, 150))->toUrl();
+                            $poster_link=$cloudinary->image("$image_name")->toUrl();
+                            
+                            $sql="INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`, `img_link`) VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date', '$poster_link');";
+                            $myFile = "../movie/$movie_id.php"; 
                             $fh = fopen($myFile, 'w'); // or die("error");  
                             $stringData = "";   
                             fwrite($fh, $stringData);
                             fclose($fh);
                             $query=mysqli_query($conn, $sql);
-                            header('Location: http://localhost/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/admin.php');
+                            
+                            //header('location: ./admin.php');
+                             
                         }
                     }
                 }else{
@@ -115,7 +168,9 @@
                     ';
                 }
             }
-     
+
+
+  
         ?>
     </div>
 </body>

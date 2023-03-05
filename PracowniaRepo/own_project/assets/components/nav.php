@@ -28,15 +28,19 @@
             }
         }
         ?>
-            <li>
-                Movies
-                <div class="underline"></div>
+            <a href="./assets/site/movies.php">
+                <li>
+                    Movies
+                    <div class="underline"></div>
 
-            </li>
-            <li>
-                Series
-                <div class="underline"></div>
-            </li>
+                </li>
+            </a>
+            <a href="./assets/site/series.php">
+                <li>
+                    Series
+                    <div class="underline"></div>
+                </li>
+            </a>
         </div>
 
 

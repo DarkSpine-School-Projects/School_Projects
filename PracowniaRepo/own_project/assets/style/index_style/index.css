@@ -261,6 +261,14 @@ nav ul li .search-btn:hover {
   color: rgb(16, 16, 16);
   cursor: pointer;
 }
+
+.title-new-added {
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  transform: translateX(-50%);
+}
+
 .accaunt-btn {
   border: 0px;
   box-shadow: 0px 0px 8px black;
