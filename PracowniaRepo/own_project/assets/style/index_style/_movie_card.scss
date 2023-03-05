@@ -7,14 +7,14 @@
   cursor: pointer;
   display: flex;
   min-width: 15%;
-  width: 20%;
+  width: 12rem;
   overflow: hidden;
   flex-direction: column;
   background-color: $nav_color;
-  min-height: 10vh;
-  height: max-content;
+  min-height: 20vh;
+  height: 30vh;
   transition: all 0.2s ease-in-out;
-  padding: 1px;
+  padding: 0px;
   gap: 20px;
   &:hover {
     box-shadow: 0px 0px 10px rgb(255, 255, 255);
@@ -24,10 +24,11 @@
     }
   }
   img {
-    object-fit: cover;
+    border-bottom: 1px solid $body_color_dark;
     width: 100%;
-    height: 100%;
+    height: 20vh;
     border-radius: 4px;
+    object-fit: cover;
   }
   .date {
     color: $body_color_dark;
@@ -43,11 +44,11 @@
 
 .movie-card-container {
   flex-direction: row;
-  gap: 20px;
+  gap: 50px;
   flex-wrap: wrap;
   margin-top: 20vh;
   display: flex;
-  width: 80%;
+  width: 60%;
   margin-top: -20vh;
   z-index: 998;
 }

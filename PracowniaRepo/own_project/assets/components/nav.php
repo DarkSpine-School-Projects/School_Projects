@@ -16,7 +16,7 @@
             if($_COOKIE['user_id'] == $acces_admin['user_id']){
                 echo 
                 '
-                <a href="./assets/site/admin.php">
+                <a href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/admin.php">
                     <li>
                         Admin
                         <div class="underline"></div>
@@ -28,14 +28,14 @@
             }
         }
         ?>
-            <a href="./assets/site/movies.php">
+            <a href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/movies.php">
                 <li>
                     Movies
                     <div class="underline"></div>
 
                 </li>
             </a>
-            <a href="./assets/site/series.php">
+            <a href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/series.php">
                 <li>
                     Series
                     <div class="underline"></div>

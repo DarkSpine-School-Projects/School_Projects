@@ -116,18 +116,22 @@
                         desc<textarea type="text" name="desc" class="desc" required></textarea>
                         title<input type="text" name="title" class="title" required>
                         date<input type="date" name="date" class="date" required>
-                        category<select type="text" name="category" class="category" required>
-                            <option value="horror">horror</option>
-                        
-                        </select>
+                        category<select type="text" name="category" class="category" required>';
+                        $category = "SELECT * FROM `category`;";
+                        $query_category = mysqli_query($server_con, $category);
+                        while($acces_category = mysqli_fetch_assoc($query_category)){
+                            echo '<option value="'.$acces_category['category'].'">'.$acces_category['category'].'</option>';
+                        }
+                        echo '
+                            </select>
                         image_url<input type="text" name="image_url" class="image_url" required>
                         <button type="sumbit" name="sumbit_vid">SUMBIT</button>
                         <script src="../script/Upload_image.js"></script>
-                    </form>
-                    ';
+                        </form>';
+                    
 
 
-
+                    
                     $conn=mysqli_connect('localhost','root','','netlib');
                     if(isset($_POST["sumbit_vid"])){
                         if( !isset($_POST['vid_link']) || !isset($_POST['desc']) || !isset($_POST['title'])|| !isset($_POST['date'])|| !isset($_POST['category'])){
@@ -142,7 +146,6 @@
                             $category=$_POST['category'];
                             $add_date = date("Y-m-d");
                             $image_url = $_POST['image_url'];
-                            $image_name = $_POST['image_name'];
                             $cloudinary->uploadApi()->upload("$image_url",['public_id' => "$movie_id"]);
                             
                             //$cloudinary->image("$image_name")->resize(Resize::fill(100, 150))->toUrl();
@@ -151,29 +154,80 @@
                             $sql="INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`, `img_link`) VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date', '$poster_link');";
                             $myFile = "../movie/$movie_id.php"; 
                             $fh = fopen($myFile, 'w'); // or die("error");  
-                            $stringData = "";   
+
+                             $stringData = "<!DOCTYPE html>
+                            <html id=\"body\" lang=\"en\">
+                            <head>";
                             fwrite($fh, $stringData);
-                            fclose($fh);
-                            $query=mysqli_query($conn, $sql);
+
+                            $stringData = "<meta charset=\"UTF-8\">
+                            <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+                            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
+                            fwrite($fh, $stringData);
+
+        $stringData = "<title><?php $movie_id = \$movie_id;
+                            \$sql_title=\"SELECT `title` FROM `movie` WHERE movie_id = '\$movie_id';\";
+                            \$query_title=mysqli_query(\$server_con, \$sql_title);
+                            \$assoc_title = mysqli_fetch_assoc(\$query_title);
                             
-                            header('location: ./admin.php');
-                             
-                        }
-                    }
-                }else{
-                    echo
-                    '
-                    <form class="log-container reg-container  flex-admin-container" action="" method="POST" enctype="multipart/form-data">
-                      <h1>NO PERMISSION</h1>
-                    </form>
-                    ';
-                }
-            }
+        echo \$assoc_title ?></title>";
+        fwrite($fh, $stringData);
+
+        $stringData = "
+        <link rel=\"stylesheet\" href=\"../style/index_style/index.css\">";
+        fwrite($fh, $stringData);
+
+        $stringData = "</head>
+
+        <body>";
+            fwrite($fh, $stringData);
+
+            $stringData = "
+            <!-- Loading Screen -->
+            <?php include_once '../components/loading.php'?>";
+            fwrite($fh, $stringData);
+
+            $stringData = "<?php include_once '../components/nav.php' 
+                        ?>";
+            fwrite($fh, $stringData);
+
+            $stringData = "<?php include_once '../components/accaunt.php' ?>";
+            fwrite($fh, $stringData);
+
+            $stringData = " <?php include_once '../components/bg_vid.php'?>";
+            fwrite($fh, $stringData);
+
+            $stringData = "<?php include_once '../components/movie_card.php'?>
+            ";
+            fwrite($fh, $stringData);
+
+            $stringData = "
+        </body>
+
+</html>";
+fwrite($fh, $stringData);
+
+fclose($fh);
+$query=mysqli_query($conn, $sql);
+
+header('location: ./admin.php');
+
+}
+}
+}else{
+echo
+'
+<form class="log-container reg-container  flex-admin-container" action="" method="POST" enctype="multipart/form-data">
+    <h1>NO PERMISSION</h1>
+</form>
+';
+}
+}
 
 
-  
-        ?>
-    </div>
+
+?>
+</div>
 </body>
 
 </html>
