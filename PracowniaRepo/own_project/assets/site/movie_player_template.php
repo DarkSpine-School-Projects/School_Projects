@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <?php 
-    $movie_id = 'Movie64049b40cfd64';
+    
     $sql_title="SELECT `title` FROM `movie` WHERE movie_id = '$movie_id';";
     $query_title=mysqli_query($server_con, $sql_title);
     $assoc_title = mysqli_fetch_assoc($query_title);
@@ -40,6 +40,9 @@
         background-color: rgb(16, 16, 16);
         box-shadow: 0px 0px 20px black;
         padding: 20px 0px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
     }
 
 
@@ -60,8 +63,6 @@
         align-content: center;
         justify-items: center;
         align-items: center;
-
-        gap: 0px;
 
     }
 
@@ -84,6 +85,7 @@
         width: 80%;
         padding: 15px;
         border-radius: 4px;
+
     }
 
     .sumbit_com {
@@ -99,14 +101,33 @@
     span {
         margin: 0;
     }
+
+    .each-com-bg {
+        box-shadow: 0px 0px 20px black;
+
+    }
+
+    .user_nick {
+        display: inline;
+        color: red;
+    }
+
+    .add_com_flex {
+        display: flex;
+        justify-content: left;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        margin: 0;
+    }
     </style>
 </head>
 
 <body>
 
     <?php include_once '../components/loading.php'?>
-    <?php include_once '../components/nav.php'?>
     <?php include_once '../components/accaunt.php' ?>
+    <?php include_once '../components/nav.php'?>
     <?php include_once '../components/bg_vid.php'?>
 
     <div class="container">

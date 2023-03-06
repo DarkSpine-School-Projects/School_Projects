@@ -15,13 +15,12 @@
 
     <!-- Loading Screen -->
     <?php include_once './assets/components/loading.php' ?>
+    <!-- Account BTN -->
+    <?php include_once './assets/components/accaunt.php' ?>
 
     <!-- Menu Bar -->
     <?php include_once './assets/components/nav.php' 
     ?>
-
-    <!-- Account BTN -->
-    <?php include_once './assets/components/accaunt.php' ?>
 
     <!-- Account BackGround Video -->
     <?php include_once './assets/components/bg_vid.php'?>

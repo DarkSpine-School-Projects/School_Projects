@@ -106,6 +106,7 @@
                             $sql = "INSERT INTO `user`(`nick`, `mail`, `password`, `user_id`, `role`) VALUES ('$nick','$mail','$password','$user_id','user');";
                             mysqli_query($server_con,$sql);
                             header('Location: /Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/login.php');
+                             die();
                         }
                     }
                 }

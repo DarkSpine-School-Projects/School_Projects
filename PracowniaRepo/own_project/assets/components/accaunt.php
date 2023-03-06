@@ -1,5 +1,6 @@
 <?php 
 
+
 if(!isset($_COOKIE['user_id'])){
     echo
     '<a href="http://localhost/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/login.php">
@@ -19,8 +20,13 @@ if(!isset($_COOKIE['user_id'])){
 ';
 }else{
     if(isset($_POST["logout"])){
-    setcookie("user_id",'user63ff71fga2v57',time() - 3600, "/Projects_Done_On_Lessons/PracowniaRepo/own_project/");
-    header('Location: /Projects_Done_On_Lessons/PracowniaRepo/own_project/');
+    setcookie("user_id","".$_COOKIE['user_id']."",time() - 3600, "/Projects_Done_On_Lessons/PracowniaRepo/own_project/");
+
+    header('Refresh:0');
+    
+    
+
+    
 }
       echo
     '

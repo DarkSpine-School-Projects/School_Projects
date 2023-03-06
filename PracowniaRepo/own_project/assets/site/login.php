@@ -95,6 +95,7 @@
                             }else{
                                 setcookie("user_id", $assoc['user_id'],time() + (86400 * 30), "/Projects_Done_On_Lessons/PracowniaRepo/own_project/");
                                  header('Location: /Projects_Done_On_Lessons/PracowniaRepo/own_project/');
+                                  die();
                             }
                         }
                     }
