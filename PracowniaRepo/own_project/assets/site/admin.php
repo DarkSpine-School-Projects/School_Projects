@@ -152,14 +152,14 @@
                             $sql="INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`, `img_link`) VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date', '$poster_link');";
                             $myFile = "../movie/$movie_id.php"; 
                             $fh = fopen($myFile, 'w'); // or die("error");  
-                            $stringData = "<?php include_once '../site/movie_player_template.php'?>";
+                            $stringData = "<?php \$movie_id = '$movie_id'; include_once '../site/movie_player_template.php'  ?>";
         fwrite($fh, $stringData);
 
         fclose($fh);
         $query=mysqli_query($conn, $sql);
 
         header('location: ./admin.php');
-
+         die();
         }
         }
         }else{
