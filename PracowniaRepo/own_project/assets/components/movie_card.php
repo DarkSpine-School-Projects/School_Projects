@@ -13,7 +13,7 @@
                 while($assoc = mysqli_fetch_assoc($query)){
                     echo 
                     ' 
-                    <a name="movie-card" class="movie-card" href="./assets/movie/'.$assoc['movie_id'].'.php">
+                    <a name="movie-card" class="movie-card" href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/'.$assoc['movie_id'].'.php">
                     <div >
                         <div class="image">
                         <img src="'.$assoc['img_link'].'" alt="'.$assoc['title'].'">

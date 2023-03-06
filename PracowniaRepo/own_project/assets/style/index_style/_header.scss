@@ -3,7 +3,7 @@
   width: 100%;
   object-fit: cover;
   height: 67vh;
-  z-index: 2;
+  z-index: 0;
 }
 
 #vid-gradient {
@@ -12,7 +12,7 @@
   width: 100%;
   object-fit: cover;
   height: 67vh;
-  z-index: 3;
+  z-index: 0;
   background: $body_color_dark;
   background: linear-gradient(
     180deg,

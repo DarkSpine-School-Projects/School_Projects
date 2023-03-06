@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <?php include_once '../components/database.php'?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +35,7 @@
             <img src="../svg/iconmonstr-caret-left-filled.svg" class="back_arrow_login" alt="">
         </a>
         <?php 
-                $server_con=mysqli_connect('localhost','root','','netlib'); 
+                 
                 if(isset($_COOKIE['user_id'])){
                     $loged_check = "SELECT `user_id` FROM `user` WHERE `user_id`= '".$_COOKIE['user_id']."';";
                     $query_loged = mysqli_query($server_con, $loged_check);
@@ -57,9 +58,9 @@
                                 <input type="text" id="nick" class="nick" name="nick" required>
                             </div>
                             <div class="mail-container">
-                                MAIL
+                                EMAIL
                                 <br>
-                                <input type="mail" id="mail" class="mail" name="mail" required>
+                                <input type="email" id="mail" class="mail" name="mail" required>
                             </div>
 
                             <div class="passowrd-container">
@@ -88,7 +89,7 @@
                     }
                     if(isset($_POST['mail']) && isset($_POST['password']) && isset($_POST['nick']) && $_POST["password"] === $_POST["re_password"]){
                         
-                        $server_con=mysqli_connect('localhost','root','','netlib');
+                        
                         $nick = $_POST['nick'];
                         $mail = $_POST['mail'];
                         $sql = "SELECT `nick`, `mail` FROM `user` WHERE `nick`='$nick' OR `mail`='$mail';";

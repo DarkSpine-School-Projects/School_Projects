@@ -45,7 +45,7 @@
 
 
         <li class="li-search">
-            <form method="GET">
+            <form action="/Projects_Done_On_Lessons/PracowniaRepo/own_project/" method="GET">
                 <input type="text" name="search" class="search" placeholder="SEARCH">
                 <button type='sumbit' name='sumbit' class="search-btn">SUMBIT</button>
             </form>

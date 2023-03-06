@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <?php include_once '../components/database.php'?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +37,7 @@
         <h1>Log In</h1>
 
         <?php
-        $server_con=mysqli_connect('localhost','root','','netlib'); 
+     
         if(isset($_COOKIE['user_id'])){
             $loged_check = "SELECT `user_id` FROM `user` WHERE `user_id`= '".$_COOKIE['user_id']."';";
             $query_loged = mysqli_query($server_con, $loged_check);
@@ -51,9 +52,9 @@
         }elseif(!isset($_COOKIE['user_id'])){
                 echo'<form class="log-container-flex" method="POST">
                         <div class="mail-container">
-                        MAIL
+                        EMAIL
                         <br>
-                        <input type="mail" id="mail" class="mail" name="mail">
+                        <input type="eamil" id="mail" class="mail" name="mail">
                     </div>
 
                     <div class="passowrd-container">
@@ -82,7 +83,7 @@
                     }else{
                     
                         if(isset($_POST['mail']) && isset($_POST['password']) && $_POST['mail'] !=null && $_POST['password'] != null ){
-                        $server_con=mysqli_connect('localhost','root','','netlib');
+                    
                         $mail = $_POST['mail'];
                         $password = $_POST['password'];
                     

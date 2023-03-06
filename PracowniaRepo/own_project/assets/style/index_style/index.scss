@@ -30,6 +30,10 @@ a {
   color: $option_color;
   text-decoration: none;
 }
+.container {
+  padding-bottom: 10vh;
+  z-index: 997;
+}
 
 /* width */
 ::-webkit-scrollbar {

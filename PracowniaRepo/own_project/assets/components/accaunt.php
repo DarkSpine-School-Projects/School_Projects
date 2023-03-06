@@ -38,7 +38,7 @@ if(!isset($_COOKIE['user_id'])){
                 
            
                 <div class="account_setting">
-                    <h3>Accaunt Setting</h3>
+                    <h3>Accaunt Settings</h3>
                 </div>
             
 

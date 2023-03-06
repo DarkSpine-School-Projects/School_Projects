@@ -66,8 +66,6 @@
         max-width: 80%;
         min-width: 80%;
     }
-
-    .log-container {}
     </style>
 </head>
 
@@ -112,7 +110,7 @@
                         <a href="../../" target="" rel="noopener noreferrer">
                             <img src="../svg/iconmonstr-caret-left-filled.svg" class="back_arrow_login" alt="">
                         </a>
-                        vid_link<input type="text" name="vid_link" class="vid_link" required>
+                        vid_url<input type="text" name="vid_link" class="vid_link" required>
                         desc<textarea type="text" name="desc" class="desc" required></textarea>
                         title<input type="text" name="title" class="title" required>
                         date<input type="date" name="date" class="date" required>
@@ -154,80 +152,32 @@
                             $sql="INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`, `img_link`) VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date', '$poster_link');";
                             $myFile = "../movie/$movie_id.php"; 
                             $fh = fopen($myFile, 'w'); // or die("error");  
-
-                             $stringData = "<!DOCTYPE html>
-                            <html id=\"body\" lang=\"en\">
-                            <head>";
-                            fwrite($fh, $stringData);
-
-                            $stringData = "<meta charset=\"UTF-8\">
-                            <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-                            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
-                            fwrite($fh, $stringData);
-
-        $stringData = "<title><?php $movie_id = \$movie_id;
-                            \$sql_title=\"SELECT `title` FROM `movie` WHERE movie_id = '\$movie_id';\";
-                            \$query_title=mysqli_query(\$server_con, \$sql_title);
-                            \$assoc_title = mysqli_fetch_assoc(\$query_title);
-                            
-        echo \$assoc_title ?></title>";
+                            $stringData = "<?php include_once '../site/movie_player_template.php'?>";
         fwrite($fh, $stringData);
 
-        $stringData = "
-        <link rel=\"stylesheet\" href=\"../style/index_style/index.css\">";
-        fwrite($fh, $stringData);
+        fclose($fh);
+        $query=mysqli_query($conn, $sql);
 
-        $stringData = "</head>
+        header('location: ./admin.php');
 
-        <body>";
-            fwrite($fh, $stringData);
-
-            $stringData = "
-            <!-- Loading Screen -->
-            <?php include_once '../components/loading.php'?>";
-            fwrite($fh, $stringData);
-
-            $stringData = "<?php include_once '../components/nav.php' 
-                        ?>";
-            fwrite($fh, $stringData);
-
-            $stringData = "<?php include_once '../components/accaunt.php' ?>";
-            fwrite($fh, $stringData);
-
-            $stringData = " <?php include_once '../components/bg_vid.php'?>";
-            fwrite($fh, $stringData);
-
-            $stringData = "<?php include_once '../components/movie_card.php'?>
-            ";
-            fwrite($fh, $stringData);
-
-            $stringData = "
-        </body>
-
-</html>";
-fwrite($fh, $stringData);
-
-fclose($fh);
-$query=mysqli_query($conn, $sql);
-
-header('location: ./admin.php');
-
-}
-}
-}else{
-echo
-'
-<form class="log-container reg-container  flex-admin-container" action="" method="POST" enctype="multipart/form-data">
-    <h1>NO PERMISSION</h1>
-</form>
-';
-}
-}
+        }
+        }
+        }else{
+        echo
+        '
+        <form class="log-container reg-container  flex-admin-container" action="" method="POST"
+            enctype="multipart/form-data">
+            <h1>NO PERMISSION</h1>
+        </form>
+        ';
+        }
+        }
 
 
 
-?>
-</div>
+        ?>
+    </div>
+
 </body>
 
 </html>
