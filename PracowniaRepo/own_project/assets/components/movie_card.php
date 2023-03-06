@@ -6,7 +6,7 @@
             
             if(!isset($_GET['search']) || $_GET['search']==''){
                 echo' <h1 class="title-new-added"> Latest Added Videos </h1>';
-                $sql = "SELECT * FROM `movie` ORDER BY 'add_date' DESC LIMIT 10 ;";
+                $sql = "SELECT * FROM `movie` ORDER BY `add_date` DESC LIMIT 10;";
                 $query = mysqli_query($server_con,$sql);
                 $assoc = mysqli_fetch_assoc($query);
                 $query = mysqli_query($server_con,$sql);
@@ -14,7 +14,7 @@
                     echo 
                     ' 
                     <a name="movie-card" class="movie-card" href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/'.$assoc['movie_id'].'.php">
-                    <div >
+                    <div style="margin:0px; width:100%;" >
                         <div class="image">
                         <img src="'.$assoc['img_link'].'" alt="'.$assoc['title'].'">
                         </div>
@@ -31,13 +31,13 @@
                 };
             }elseif(isset($_GET['search'])){
                 $search=$_GET['search'];
-                $sql = "SELECT * FROM `movie` WHERE title LIKE '$search%' ORDER BY 'date' DESC";
+                $sql = "SELECT * FROM `movie` WHERE title LIKE '$search%';";
                 $query = mysqli_query($server_con,$sql);
                 while($assoc = mysqli_fetch_assoc($query)){
                     echo 
                     ' 
-                    <div name="movie-card" class="movie-card">
-                        <a href="./assets/movie/'.$assoc['movie_id'].'.php">
+                     <a name="movie-card" class="movie-card" href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/'.$assoc['movie_id'].'.php">
+                    <div style="margin:0px; width:100%;" >
                         <div class="image">
                         <img src="'.$assoc['img_link'].'" alt="'.$assoc['title'].'">
                         </div>
@@ -47,28 +47,29 @@
                         <div class="date">
                         Relase: '.$assoc['date'].'
                         </div>
-                        </a>
+
                     </div>
+                    </a>
                     ';
                 };
                 
             
             };
             if(isset($_GET['search'])){
-            $search=$_GET['search'];
-            $sql = "SELECT * FROM `movie` WHERE title LIKE '$search%' ORDER BY 'date' ";
-            $query = mysqli_query($server_con,$sql);
-            $assoc = mysqli_fetch_assoc($query);
-            if(!isset($assoc)){
-                        echo 
-                        ' 
+                $search=$_GET['search'];
+                $sql = "SELECT * FROM `movie` WHERE title LIKE '$search%' ORDER BY 'date' ";
+                $query = mysqli_query($server_con,$sql);
+                $assoc = mysqli_fetch_assoc($query);
+                if(!isset($assoc)){
+                            echo 
+                            ' 
+                            
+                            <h1> NO MOVIES FOUNDED </h1>
+                            
+                            ';
                         
-                           <h1> NO MOVIES FOUNDED </h1>
-                        
-                        ';
-                     
+                }
             }
-        }
             ?>
     </section>
 </div>
