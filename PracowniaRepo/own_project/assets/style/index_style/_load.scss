@@ -3,6 +3,7 @@ header {
   height: 100vh;
 }
 .load-container {
+  background-color: $body_color_dark;
   letter-spacing: 10px;
   animation: $animation_time_load_con;
   position: fixed;
