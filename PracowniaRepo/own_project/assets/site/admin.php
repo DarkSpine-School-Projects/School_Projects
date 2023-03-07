@@ -81,7 +81,7 @@
     <?php     
     require_once(__DIR__ . '../../../vendor/autoload.php'); 
     
-      use Cloudinary\Cloudinary;
+    use Cloudinary\Cloudinary;
     use Cloudinary\Transformation\Resize;
 
                     $cloudinary = new Cloudinary(
