@@ -56,7 +56,7 @@
 
     .each-com {
 
-        width: 80%;
+        width: 90%;
         min-height: 10vh;
         display: flex;
         justify-content: center;
@@ -82,7 +82,7 @@
         outline: none;
         border: none;
         height: 100%;
-        width: 80%;
+        width: 90%;
         padding: 15px;
         border-radius: 4px;
 
@@ -90,8 +90,8 @@
 
     .sumbit_com {
         height: 100%;
-        width: 10%;
-        padding: 15px;
+        width: 7%;
+        background-color: transparent;
         outline: none;
         border: none;
         text-align: center;
