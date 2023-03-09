@@ -91,7 +91,7 @@
 
     .sumbit_com {
         height: 100%;
-        width: 6%;
+        width: 4%;
         background-color: transparent;
         outline: none;
         border: none;

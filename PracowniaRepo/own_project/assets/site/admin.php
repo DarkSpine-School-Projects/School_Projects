@@ -74,22 +74,7 @@
     <?php include_once '../components/loading.php' ?>
     <!-- Account BackGround Video -->
     <?php include_once '../components/bg_vid.php'?>
-    <?php     
-    require_once(__DIR__ . '../../../vendor/autoload.php'); 
-    
-    use Cloudinary\Cloudinary;
-    use Cloudinary\Transformation\Resize;
 
-                    $cloudinary = new Cloudinary(
-                        [
-                            'cloud' => [
-                                'cloud_name' => 'djg4nn4ik',
-                                'api_key'    => '248118483455672',
-                                'api_secret' => 'P_4GNtxsO5bsk_HqX9HH1fJtnyg',
-                            ],
-                        ]
-                    );
-    ?>
     <?php include_once '../components/loading.php' ?>
     <div class="">
         <?php
@@ -118,7 +103,7 @@
                         }
                         echo '
                             </select>
-                        image_url<input type="text" name="image_url" class="image_url" required>
+                        Poster<input type="file" name="image_url" class="image_url" required>
                         <button type="sumbit" name="sumbit_vid">SUMBIT</button>
                         <script src="../script/Upload_image.js"></script>
                         </form>';
@@ -126,12 +111,12 @@
 
 
                     
-                    $conn=mysqli_connect('localhost','root','','netlib');
+                
                     if(isset($_POST["sumbit_vid"])){
                         if( !isset($_POST['vid_link']) || !isset($_POST['desc']) || !isset($_POST['title'])|| !isset($_POST['date'])|| !isset($_POST['category'])){
                         echo"ERROR SOME INFO IS MISSING";
                         }else{
-                        $conn=mysqli_connect('localhost','root','','netlib'); 
+                            
                             $vid_link=$_POST['vid_link'];
                             $desc=$_POST['desc'];
                             $movie_id=uniqid('Movie');
@@ -140,19 +125,31 @@
                             $category=$_POST['category'];
                             $add_date = date("Y-m-d");
                             $image_url = $_POST['image_url'];
-                            $cloudinary->uploadApi()->upload("$image_url",['public_id' => "$movie_id"]);
-                            
-                            //$cloudinary->image("$image_name")->resize(Resize::fill(100, 150))->toUrl();
-                            $poster_link=$cloudinary->image("$movie_id")->toUrl();
-                            
-                            $sql="INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`, `img_link`) VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date', '$poster_link');";
+   
+                                        
+                            $filename = $_FILES["image_url"]["name"];
+                            $tempname = $_FILES["image_url"]["tmp_name"];
+                            $folder = "../img/" . $filename.".png";
+                            $folder1 = "../img/" . $movie_id.".png";
+                            rename("$folder","$folder1");
+                            move_uploaded_file($tempname,$folder1);
+                            $sql_insert = "/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/img/" . $movie_id.".png";
+
+                           
+
+                        
+
+                        
+                         
+                            $sql="INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`, `img_link`)  VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date', '$sql_insert');";
+                          
                             $myFile = "../movie/$movie_id.php"; 
                             $fh = fopen($myFile, 'w'); // or die("error");  
                             $stringData = "<?php \$movie_id = '$movie_id'; include_once '../site/movie_player_template.php'  ?>";
         fwrite($fh, $stringData);
 
         fclose($fh);
-        $query=mysqli_query($conn, $sql);
+        $query=mysqli_query($server_con, $sql);
 
         header('location: ./admin.php');
         die();
