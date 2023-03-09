@@ -21,14 +21,9 @@
 </head>
 
 <body>
-    <section class="header">
-        <div id="vid-gradient" z-index="-2"></div>
-        <video id="vid-main" autoplay muted loop>
-            <source id="vid-main-source"
-                src="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/vid/loading.mp4" type="video/mp4" />
-        </video>
-    </section>
     <?php include_once '../components/loading.php' ?>
+    <!-- Account BackGround Video -->
+    <?php include_once '../components/bg_vid.php'?>
     <div class="log-container">
 
         <a href="../../" target="" rel="noopener noreferrer">

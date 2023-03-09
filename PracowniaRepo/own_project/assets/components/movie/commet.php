@@ -1,4 +1,4 @@
-<section class="com-con">
+<section id="com-con" class="com-con">
     <h1 style="margin-left:20px;">Comments:</h1>
     <?php
 
@@ -34,7 +34,7 @@ use GuzzleHttp\Psr7\Query;
                     $sql = "INSERT INTO `comments`(`movie_id`, `comment`, `user_id`, `add_date`, `comment_id`) VALUES ('$movie_id','$add_com','".$_COOKIE['user_id']."','$add_date','$comment_id');";
                     $query = mysqli_query($server_con, $sql);
                     
-                    echo "<script type=\"text/javascript\"> window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/".$movie_id.".php';</script>";
+                    echo "<script type=\"text/javascript\"> window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/".$movie_id.".php#com-con';</script>";
                    
                 }
                      echo ' <button class="sumbit_com" name="sumbit" type="sumbit"><svg fill="white" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/></svg></button>     
@@ -42,18 +42,18 @@ use GuzzleHttp\Psr7\Query;
                 </div>';
                 
                 }else{
-                    echo'<br>';
+                    echo'<h1>Log In To Give Your Comment</h1> <br>';
                 }
                 
                
                 $sql_user = "SELECT * FROM `comments` WHERE `movie_id` = '$movie_id' ORDER BY `add_date` DESC;";
                 $query_user = mysqli_query($server_con, $sql_user);
                 
-                while($assoc_user = mysqli_fetch_assoc($query_user)  ){
+                while($assoc_user = mysqli_fetch_assoc($query_user)){
                 $sql_user_u = "SELECT * FROM `user` WHERE `user_id`= '".$assoc_user['user_id']."' ;";
                 $query_user_u = mysqli_query($server_con, $sql_user_u);
                 $assoc_user_u = mysqli_fetch_assoc($query_user_u);
-                $assoc_comment_id=$assoc_user['comment_id'];
+                 $assoc_comment_id=$assoc_user['comment_id'];
                     echo '<div class="each-com each-com-bg">
                         <div class="add_com add_com_flex">';
                      if($assoc_user_u['picture']!=''){
@@ -65,30 +65,30 @@ use GuzzleHttp\Psr7\Query;
                               
                     if(isset($_COOKIE['user_id'])){
                     if($assoc_user_u['user_id']==$_COOKIE['user_id']){
-                        echo'<form method="post" style="margin-right:0;word-wrap:"><button name="delate_comm"><h5>delate</h5></button></form>';
-                    
-            
+                        
+                        echo'<form method="post" style="margin-right:0;word-wrap:"><button name="'.$assoc_comment_id.'"><h5>delate</h5></button></form>';
+                        if(isset($_POST[$assoc_comment_id])){
+                                $assoc_comment_id;
+                                $sql1 = "DELETE FROM `comments` WHERE `comment_id` = '$assoc_comment_id';";
+                                mysqli_query($server_con, $sql1);
+                            echo "<script type=\"text/javascript\"> window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/".$movie_id.".php#com-con';</script>";
+                        };
+                   
                      }else{
                         echo '';
                      }
                     }else{
                         echo '';
                      }
-                       echo $assoc_comment_id;
-                        if(isset($_POST['delate_comm'])){
-                             $assoc_comment_id;
-                         }
+                       
               echo'  </div>
                     </div>';
                 }  
-               
-                if(isset($_POST['delate_comm'])){
-                            $sql_a = "DELETE FROM `comments` WHERE `comment_id` = '$assoc_comment_id' ; ";
-                            echo mysqli_query($server_con, $sql_a);
-                            
-                           
-                    }
+         
+                        
                 
+                    
+                    
             
                 
             ?>
