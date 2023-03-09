@@ -50,6 +50,7 @@
         width: 30px;
         height: 30px;
         border-radius: 100%;
+        object-fit: cover;
     }
 
 
@@ -90,7 +91,7 @@
 
     .sumbit_com {
         height: 100%;
-        width: 7%;
+        width: 6%;
         background-color: transparent;
         outline: none;
         border: none;
@@ -101,6 +102,7 @@
     span {
         margin: 0;
     }
+
 
     .each-com-bg {
         box-shadow: 0px 0px 20px black;
@@ -119,6 +121,15 @@
         align-items: center;
         align-content: center;
         margin: 0;
+    }
+
+    .svg-del {
+        fill: aliceblue;
+        cursor: pointer;
+    }
+
+    .svg-del:hover {
+        fill: red;
     }
     </style>
 </head>

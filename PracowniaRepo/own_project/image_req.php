@@ -1,22 +1,26 @@
 <?php 
 
 if(isset($_POST['send_picture']) ){
+    include_once './assets/components/database.php';
     $user_id = $_COOKIE["user_id"];         
                    
     $filename = $_FILES["uploadfile"]["name"];
     $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "./assets/img/" . $filename;
- 
- 
-    // Now let's move the uploaded image into the folder: image
-    if (move_uploaded_file($tempname, $folder)) {
-        echo "<h3>  Image uploaded successfully!</h3>";
-    } else {
-        echo "<h3>  Failed to upload image!</h3>";
-    }
-                }else{
-                    echo'';
-                }
-                header('Location: /Projects_Done_On_Lessons/PracowniaRepo/own_project/')
+    $folder = "./assets/img/" . $filename.".png";
+    $folder1 = "./assets/img/" . $user_id.".png";
+
+    rename("$folder","$folder1");
+    $sql_insert = "/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/img/" . $user_id.".png";
+   $sql = "UPDATE `user` SET `picture`='$sql_insert' WHERE `user_id`='$user_id';";
+    mysqli_query($server_con, $sql);
+    move_uploaded_file($tempname,$folder1);
+
+    header('Location: /Projects_Done_On_Lessons/PracowniaRepo/own_project/');
+
+}else{
+        echo'';
+}
+
+
 
 ?>

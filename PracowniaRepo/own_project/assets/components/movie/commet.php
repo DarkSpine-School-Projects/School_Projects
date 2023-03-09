@@ -1,5 +1,5 @@
 <section id="com-con" class="com-con">
-    <h1 style="margin-left:20px;">Comments:</h1>
+    <h1 id="com-con-del" style="margin-left:20px;">Comments:</h1>
     <?php
 
 use GuzzleHttp\Psr7\Query;
@@ -34,7 +34,7 @@ use GuzzleHttp\Psr7\Query;
                     $sql = "INSERT INTO `comments`(`movie_id`, `comment`, `user_id`, `add_date`, `comment_id`) VALUES ('$movie_id','$add_com','".$_COOKIE['user_id']."','$add_date','$comment_id');";
                     $query = mysqli_query($server_con, $sql);
                     
-                    echo "<script type=\"text/javascript\"> window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/".$movie_id.".php#com-con';</script>";
+                    echo "<script type=\"text/javascript\"> window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/".$movie_id.".php';</script>";
                    
                 }
                      echo ' <button class="sumbit_com" name="sumbit" type="sumbit"><svg fill="white" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/></svg></button>     
@@ -66,12 +66,12 @@ use GuzzleHttp\Psr7\Query;
                     if(isset($_COOKIE['user_id'])){
                     if($assoc_user_u['user_id']==$_COOKIE['user_id']){
                         
-                        echo'<form method="post" style="margin-right:0;word-wrap:"><button name="'.$assoc_comment_id.'"><h5>delate</h5></button></form>';
+                       echo'<form method="post" style="margin-right:0;word-wrap:"><button style="width:50px; background:transparent; border:none;" name="'.$assoc_comment_id.'"><h5><svg class="svg-del" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m21 3.998c0-.478-.379-1-1-1h-16c-.62 0-1 .519-1 1v16c0 .621.52 1 1 1h16c.478 0 1-.379 1-1zm-16.5.5h15v15h-15zm7.491 6.432 2.717-2.718c.146-.146.338-.219.53-.219.404 0 .751.325.751.75 0 .193-.073.384-.22.531l-2.717 2.717 2.728 2.728c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-2.728-2.728-2.728 2.728c-.147.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l2.728-2.728-2.722-2.722c-.146-.147-.219-.338-.219-.531 0-.425.346-.749.75-.749.192 0 .384.073.53.219z" fill-rule="nonzero"/></svg></h5></button></form>';
                         if(isset($_POST[$assoc_comment_id])){
                                 $assoc_comment_id;
                                 $sql1 = "DELETE FROM `comments` WHERE `comment_id` = '$assoc_comment_id';";
                                 mysqli_query($server_con, $sql1);
-                            echo "<script type=\"text/javascript\"> window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/".$movie_id.".php#com-con';</script>";
+                                echo "<script type=\"text/javascript\"> window.location.href = './".$movie_id.".php';</script>";
                         };
                    
                      }else{

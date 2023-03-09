@@ -1,6 +1,5 @@
 .movie-card {
   line-height: 30px;
-
   z-index: 998;
   border-radius: 2px;
   cursor: pointer;
@@ -9,31 +8,31 @@
   width: 12rem;
   overflow: hidden;
   flex-direction: column;
-  box-shadow: 0px 0px 20px rgb(0, 0, 0);
+  box-shadow: 0px 0px 20px rgb(0 0 0);
   background-color: rgb(24, 24, 24);
   min-height: 20vh;
-  height: 30vh;
+  /* height: 30vh; */
   transition: all 0.2s ease-in-out;
   padding: 0px;
   gap: 20px;
+  padding-bottom: 10px;
+
   &:hover {
     .title {
       color: $option_color;
     }
     img {
       border-radius: 0px 0px 0% 0%;
-      border-bottom: 3px solid red;
-
-      transform: scale(104%);
-      margin-bottom: 0.5vh;
+      border-bottom: 1px solid rgb(255, 255, 255);
     }
   }
   img {
-    transition: all 0.2s ease-in-out;
-    border-bottom: 3px solid rgba(255, 0, 0, 0.486);
+    transition: all 0.1s ease-in-out;
+    border-radius: 0px 0px 0% 0%;
+    border-bottom: 1px solid red;
     width: 100%;
     height: 20vh;
-    border-radius: 0px 0px 20px 20px;
+
     object-fit: cover;
   }
   .date {
@@ -47,7 +46,6 @@
     }
   }
 }
-
 .movie-card-container {
   flex-direction: row;
   gap: 50px;

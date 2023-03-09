@@ -36,12 +36,12 @@
 
                 </li>
             </a>
-            <a href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/series.php">
+            <!-- <a href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/series.php">
                 <li>
                     Series
                     <div class="underline"></div>
                 </li>
-            </a>
+            </a> -->
         </div>
 
 

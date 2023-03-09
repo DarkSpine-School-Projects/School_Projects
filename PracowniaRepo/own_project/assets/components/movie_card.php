@@ -30,8 +30,8 @@
                     ';
                 };
             }elseif(isset($_GET['search'])){
-                $search=$_GET['search'];
-                $sql = "SELECT * FROM `movie` WHERE title LIKE '$search%';";
+                $search=strtolower($_GET['search']);
+                $sql = "SELECT * FROM `movie` WHERE LOWER(`title`) LIKE '$search%';";
                 $query = mysqli_query($server_con,$sql);
                 while($assoc = mysqli_fetch_assoc($query)){
                     echo 
@@ -56,8 +56,8 @@
             
             };
             if(isset($_GET['search'])){
-                $search=$_GET['search'];
-                $sql = "SELECT * FROM `movie` WHERE title LIKE '$search%' ORDER BY 'date' ";
+                $search=strtolower($_GET['search']);
+                $sql = "SELECT * FROM `movie` WHERE LOWER(`title`) LIKE '$search%' ORDER BY 'date' ";
                 $query = mysqli_query($server_con,$sql);
                 $assoc = mysqli_fetch_assoc($query);
                 if(!isset($assoc)){
