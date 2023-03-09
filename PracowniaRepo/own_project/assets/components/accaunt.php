@@ -1,19 +1,3 @@
-<?php     
-    require_once(__DIR__ . '../../../vendor/autoload.php'); 
-    use Cloudinary\Api\Upload\UploadApi;
-    use Cloudinary\Cloudinary;
-    use Cloudinary\Transformation\Resize;
-
-                    $cloudinary = new Cloudinary(
-                        [
-                            'cloud' => [
-                                'cloud_name' => 'djg4nn4ik',
-                                'api_key'    => '248118483455672',
-                                'api_secret' => 'P_4GNtxsO5bsk_HqX9HH1fJtnyg',
-                            ],
-                        ]
-                    );
-    ?>
 <?php 
 if(!isset($_COOKIE['user_id'])){
     echo
@@ -64,24 +48,10 @@ if(!isset($_COOKIE['user_id'])){
                     <h3>Accaunt Settings</h3>
                 </div>
 
-            <form class="logout" method="POST">
-                <input name="picture" type="file">
-                    
-                <button type="sumbit" name="send_picture" class="logout-btn">';
-                if(isset($_POST['send_picture']) && isset($_POST['picture'])){
-                    
-                    $picture = $_POST['picture'];
-                    $user_id=$_COOKIE['user_id'];
-                    (new UploadApi())->upload($picture);
-                    $cloudinary->uploadApi()->upload("$picture",['public_id' => "$user_id"]);
-                    
-                            
-                            //$cloudinary->image("$image_name")->resize(Resize::fill(100, 150))->toUrl();
-                            $poster_link=$cloudinary->image("$user_id")->toUrl();
-                }else{
-                    echo'asdf';
-                }
-                echo'<button type="sumbit" name="logout" class="logout-btn">
+            <form class="logout" action="/Projects_Done_On_Lessons/PracowniaRepo/own_project/image_req.php" method="post" enctype="multipart/form-data">
+                <input name="uploadfile" type="file">
+                <button type="sumbit" name="send_picture" class="logout-btn">
+                <button type="sumbit" name="logout" class="logout-btn">
                     logout
                 </button>
             </form>
