@@ -41,6 +41,7 @@
                             You are Already logged
                         </form>
                         '; 
+                        echo "<script type=\"text/javascript\"> window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/';</script>";
                     } 
                 }elseif(!isset($_COOKIE['user_id'])){
                     echo

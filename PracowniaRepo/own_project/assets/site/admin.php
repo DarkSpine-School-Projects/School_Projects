@@ -162,7 +162,11 @@
             enctype="multipart/form-data">
             <h1>NO PERMISSION</h1>
         </form>
+
         ';
+        echo "<script type=\"text/javascript\">
+        window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/';
+        </script>";
         }
         }
 
