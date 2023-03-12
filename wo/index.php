@@ -117,10 +117,10 @@
     }
 
     .img-car {
-        overflow: hidden;
         object-fit: cover;
+        overflow: hidden;
         width: 100%;
-        max-height: 40%;
+        height: 30vh;
     }
 
 
@@ -151,15 +151,15 @@
     <div id="container" class="container">
         <?php 
         
-            $sql = "SELECT * FROM `cars` ORDER BY `acceleration`;";
+            $sql = "SELECT DISTINCT * FROM `cars` ORDER BY `acceleration`;";
             $query = mysqli_query($db, $sql);
 
             while($assoc= mysqli_fetch_assoc($query)){
                 echo'
                 
                     <div id="card-car" class="card-car">
-                      
-                        <img class="img-car" src="'.$assoc["img_url"].'">
+                        <div class="img-car"> <img class="img-car" src="'.$assoc["img_url"].'"></div>
+                       
                        
                         <div class="info-car">
                             <span>Nazwa: <h2>'.$assoc["name"].'</h2></span>

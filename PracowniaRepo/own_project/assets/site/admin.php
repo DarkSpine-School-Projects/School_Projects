@@ -123,7 +123,7 @@
                             $title=$_POST['title'];
                             $date=$_POST['date'];
                             $category=$_POST['category'];
-                            $add_date = date("Y-m-d");
+                            $add_date = date('Y-m-d H:i:s');
                             $image_url = $_POST['image_url'];
    
                                         
