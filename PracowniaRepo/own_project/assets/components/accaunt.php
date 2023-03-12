@@ -48,10 +48,10 @@ if(!isset($_COOKIE['user_id'])){
                 <div>Select Your Account Picture</div>
                 <br>
                 <div style="display:flex; flex-direction:row; width:80%; gap:0px;">
-                <label for="files" style="color:gray; background:white; padding:10px; width:100%; text-align:center; cursor:pointer;" name="uploadfile">Select Image</label>
+                <label for="files" class="logout-btn" style=" color:white !important; background: rgb(16,16,16); padding:10px; width:100%; text-align:center; cursor:pointer; z-index:1000;" name="uploadfile">Select Image</label>
               
                 <input id="files" style=" visibility:hidden;"; name="uploadfile" type="file" title="">
-                <button type="sumbit" name="send_picture" class="logout-btn" style="width:100%; padding:5px;margin-left: -5px;">Sumbit</button>
+                <button type="sumbit" name="send_picture" class="logout-btn" style="width:100%; padding:5px;margin-left: -5px;">Commit</button>
                 </div>
             </form>
             <form class="logout" action="/Projects_Done_On_Lessons/PracowniaRepo/own_project/" method="post">

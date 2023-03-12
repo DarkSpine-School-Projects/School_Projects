@@ -135,6 +135,7 @@
 </head>
 
 <body>
+    <?php include_once '../components/del_vid.php'?>
 
     <?php include_once '../components/loading.php'?>
     <?php include_once '../components/accaunt.php' ?>

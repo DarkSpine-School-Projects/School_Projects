@@ -91,9 +91,8 @@
                         <a href="../../" target="" rel="noopener noreferrer">
                             <img src="../svg/iconmonstr-caret-left-filled.svg" class="back_arrow_login" alt="">
                         </a>
-                        vid_url<input type="text" name="vid_link" class="vid_link" required>
-                        desc<textarea type="text" name="desc" class="desc" required></textarea>
                         title<input type="text" name="title" class="title" required>
+                        desc<textarea type="text" name="desc" class="desc" required></textarea>
                         date<input type="date" name="date" class="date" required>
                         category<select type="text" name="category" class="category" required>';
                         $category = "SELECT * FROM `category`;";
@@ -102,7 +101,9 @@
                             echo '<option value="'.$acces_category['category'].'">'.$acces_category['category'].'</option>';
                         }
                         echo '
-                            </select>
+                        </select>
+                        vid_url<input type="text" name="vid_link" class="vid_link" required>
+                        
                         Poster<input type="file" name="image_url" class="image_url" required>
                         <button type="sumbit" name="sumbit_vid">SUMBIT</button>
                         <script src="../script/Upload_image.js"></script>
@@ -134,13 +135,8 @@
                             rename("$folder","$folder1");
                             move_uploaded_file($tempname,$folder1);
                             $sql_insert = "/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/img/" . $movie_id.".png";
+                            
 
-                           
-
-                        
-
-                        
-                         
                             $sql="INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`, `img_link`)  VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date', '$sql_insert');";
                           
                             $myFile = "../movie/$movie_id.php"; 

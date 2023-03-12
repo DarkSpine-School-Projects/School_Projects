@@ -5,7 +5,7 @@
             
             
             if(!isset($_GET['search']) || $_GET['search']==''){
-                echo' <h1 class="title-new-added"> Latest Added Videos </h1>';
+                echo' <h1 class="title-new-added"> Latest Added Movies </h1>';
                 $sql = "SELECT * FROM `movie` ORDER BY `add_date` DESC LIMIT 10;";
                 $query = mysqli_query($server_con,$sql);
                 $assoc = mysqli_fetch_assoc($query);
@@ -24,7 +24,10 @@
                         <div class="date">
                         Relase: '.$assoc['date'].'
                         </div>
-
+                        
+                        <div class="desc">
+                        '.$assoc['decs'].'
+                        </div>
                     </div>
                     </a>
                     ';
@@ -41,13 +44,17 @@
                         <div class="image">
                         <img src="'.$assoc['img_link'].'" alt="'.$assoc['title'].'">
                         </div>
+                        
                         <div class="title"><h3>
                         '.$assoc['title'].'</h3>
                         </div>
                         <div class="date">
                         Relase: '.$assoc['date'].'
                         </div>
-
+                        
+                        <div class="desc">
+                        '.$assoc['decs'].'
+                        </div>
                     </div>
                     </a>
                     ';
