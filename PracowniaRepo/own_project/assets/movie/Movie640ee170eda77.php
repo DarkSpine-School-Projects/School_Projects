@@ -1,0 +1,1 @@
+<?php $movie_id = 'Movie640ee170eda77'; include_once '../site/movie_player_template.php'  ?>
