@@ -73,18 +73,18 @@
 
     <?php include_once '../components/loading.php' ?>
     <!-- Account BackGround Video -->
-    <?php include_once '../components/bg_vid.php'?>
+    <?php include_once '../components/bg_vid.php' ?>
 
     <?php include_once '../components/loading.php' ?>
     <div class="">
         <?php
-            $server_con=mysqli_connect('localhost','root','','netlib'); 
-            if(isset($_COOKIE['user_id'])){
-                $admin_check = "SELECT `user_id` FROM `user` WHERE `role`= 'admin';";
-                $query_admin = mysqli_query($server_con, $admin_check);
-                $acces_admin = mysqli_fetch_assoc($query_admin);
-                if($_COOKIE['user_id'] == $acces_admin['user_id']){
-                    echo'
+        $server_con = mysqli_connect('localhost', 'root', '', 'netlib');
+        if (isset($_COOKIE['user_id'])) {
+            $admin_check = "SELECT `user_id` FROM `user` WHERE `role`= 'admin';";
+            $query_admin = mysqli_query($server_con, $admin_check);
+            $acces_admin = mysqli_fetch_assoc($query_admin);
+            if ($_COOKIE['user_id'] == $acces_admin['user_id']) {
+                echo '
                     
                     <form class="log-container reg-container  flex-admin-container" action="" method="POST" enctype="multipart/form-data">
                     <h2>ADD MOVIE</h2>
@@ -95,12 +95,12 @@
                         desc<textarea type="text" name="desc" class="desc" required></textarea>
                         date<input type="date" name="date" class="date" required>
                         category<select type="text" name="category" class="category" required>';
-                        $category = "SELECT * FROM `category`;";
-                        $query_category = mysqli_query($server_con, $category);
-                        while($acces_category = mysqli_fetch_assoc($query_category)){
-                            echo '<option value="'.$acces_category['category'].'">'.$acces_category['category'].'</option>';
-                        }
-                        echo '
+                $category = "SELECT * FROM `category`;";
+                $query_category = mysqli_query($server_con, $category);
+                while ($acces_category = mysqli_fetch_assoc($query_category)) {
+                    echo '<option value="' . $acces_category['category'] . '">' . $acces_category['category'] . '</option>';
+                }
+                echo '
                         </select>
                         vid_url<input type="text" name="vid_link" class="vid_link" required>
                         
@@ -108,50 +108,50 @@
                         <button type="sumbit" name="sumbit_vid">SUMBIT</button>
                         <script src="../script/Upload_image.js"></script>
                         </form>';
-                    
 
 
-                    
-                
-                    if(isset($_POST["sumbit_vid"])){
-                        if( !isset($_POST['vid_link']) || !isset($_POST['desc']) || !isset($_POST['title'])|| !isset($_POST['date'])|| !isset($_POST['category'])){
-                        echo"ERROR SOME INFO IS MISSING";
-                        }else{
-                            
-                            $vid_link=$_POST['vid_link'];
-                            $desc=$_POST['desc'];
-                            $movie_id=uniqid('Movie');
-                            $title=$_POST['title'];
-                            $date=$_POST['date'];
-                            $category=$_POST['category'];
-                            $add_date = date('Y-m-d H:i:s');
-                            $image_url = $_POST['image_url'];
-   
-                                        
-                            $filename = $_FILES["image_url"]["name"];
-                            $tempname = $_FILES["image_url"]["tmp_name"];
-                            $folder = "../img/" . $filename.".png";
-                            $folder1 = "../img/" . $movie_id.".png";
-                            rename("$folder","$folder1");
-                            move_uploaded_file($tempname,$folder1);
-                            $sql_insert = "/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/img/" . $movie_id.".png";
-                            
 
-                            $sql="INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`, `img_link`)  VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date', '$sql_insert');";
-                          
-                            $myFile = "../movie/$movie_id.php"; 
-                            $fh = fopen($myFile, 'w'); // or die("error");  
-                            $stringData = "<?php \$movie_id = '$movie_id'; include_once '../site/movie_player_template.php'  ?>";
+
+
+                if (isset($_POST["sumbit_vid"])) {
+                    if (!isset($_POST['vid_link']) || !isset($_POST['desc']) || !isset($_POST['title']) || !isset($_POST['date']) || !isset($_POST['category'])) {
+                        echo "ERROR SOME INFO IS MISSING";
+                    } else {
+
+                        $vid_link = $_POST['vid_link'];
+                        $desc = $_POST['desc'];
+                        $movie_id = uniqid('Movie');
+                        $title = $_POST['title'];
+                        $date = $_POST['date'];
+                        $category = $_POST['category'];
+                        $add_date = date('Y-m-d H:i:s');
+                        $image_url = $_POST['image_url'];
+
+
+                        $filename = $_FILES["image_url"]["name"];
+                        $tempname = $_FILES["image_url"]["tmp_name"];
+                        $folder = "../img/" . $filename . ".png";
+                        $folder1 = "../img/" . $movie_id . ".png";
+                        rename("$folder", "$folder1");
+                        move_uploaded_file($tempname, $folder1);
+                        $sql_insert = "/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/img/" . $movie_id . ".png";
+
+
+                        $sql = "INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`, `img_link`)  VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date', '$sql_insert');";
+
+                        $myFile = "../movie/$movie_id.php";
+                        $fh = fopen($myFile, 'w'); // or die("error");  
+                        $stringData = "<?php \$movie_id = '$movie_id'; include_once '../site/movie_player_template.php'  ?>";
         fwrite($fh, $stringData);
 
         fclose($fh);
-        $query=mysqli_query($server_con, $sql);
+        $query = mysqli_query($server_con, $sql);
 
         header('location: ./admin.php');
         die();
         }
         }
-        }else{
+        } else {
         echo
         '
         <form class="log-container reg-container  flex-admin-container" action="" method="POST"
