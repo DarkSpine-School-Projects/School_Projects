@@ -1,0 +1,40 @@
+*,html,body{
+
+ 
+    border: 0;
+    word-wrap: normal;
+   
+}
+#body{
+    background-color: #EEEEEE;
+}
+#kontener{
+    background-color: #C0C0C0;
+    margin: auto;
+    width: 1000px;
+   text-align: center;
+}
+nav{
+    background-color: #C0C0C0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+ul{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 50%;
+    width: 50%;
+}
+li{
+    font-size: 20px;
+    width: max-content;
+    list-style: none;
+}
+#menu{
+    width:600px;   
+}
+#logo{
+    object-fit: cover;
+   width: 400px;
+}
