@@ -1,1 +1,114 @@
-<body>asdfsdf</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="import" href="./header.html" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("./header.html");
+        $("#stopka").load("./stopka.html");
+      });
+    </script>
+    <script>
+      function send() {
+        let checkbox = document.getElementById("checkbox");
+        if (checkbox.checked == true) {
+          document.getElementById("par").style.color = "g";
+          let imie = document.getElementById("imie").value;
+          let nazwisko = document.getElementById("nazwisko").value;
+          let email = document.getElementById("e-mail").value;
+          let usluga = document.getElementById("usluga").value;
+          document.getElementById("par").style.color = "#555555";
+          document.getElementById(
+            "par"
+          ).innerHTML = `${imie.toUpperCase()} ${nazwisko.toUpperCase()}<br>Treść Towojej sprawy: ${usluga}. Na podany e-mail zostanie wysłana oferta${email}`;
+        } else {
+          document.getElementById("par").style.color = "red";
+          document.getElementById(
+            "par"
+          ).innerHTML = `Musisz się zpoznać z regulaminem`;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="kontener">
+      <div id="header"></div>
+      <div id="blok_glowny">
+        <hr />
+        <h2>Kontakt</h2>
+        <form>
+          <table>
+            <tr>
+              <td>Imię</td>
+              <td><input type="text" id="imie" value="" /></td>
+            </tr>
+            <tr>
+              <td>Nazwisko</td>
+              <td><input type="text" id="nazwisko" value="" /></td>
+            </tr>
+            <tr>
+              <td>E-mail</td>
+              <td><input type="email" id="e-mail" value="" /></td>
+            </tr>
+            <tr>
+              <td>Usługa</td>
+              <td>
+                <textarea
+                  name="usluga"
+                  cols="30"
+                  rows="10"
+                  id="usluga"
+                  value=""
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input
+                  type="checkbox"
+                  name="checkbox"
+                  id="checkbox"
+                />Zapoznałam/em się z regulaminem
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <button type="reset">Resetuj</button>
+                <button type="button" onclick="send()">Prześlij</button>
+              </td>
+            </tr>
+          </table>
+          <p id="par"></p>
+        </form>
+        <hr />
+      </div>
+      <div id="stopka"></div>
+    </div>
+  </body>
+</html>

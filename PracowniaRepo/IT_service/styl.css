@@ -1,40 +1,52 @@
-*,html,body{
-
- 
-    border: 0;
-    word-wrap: normal;
-   
+#body {
+  background-color: #eeeeee;
 }
-#body{
-    background-color: #EEEEEE;
+#kontener {
+  background-color: #c0c0c0;
+  margin: auto;
+  width: 1000px;
+  text-align: center;
 }
-#kontener{
-    background-color: #C0C0C0;
-    margin: auto;
-    width: 1000px;
-   text-align: center;
+nav {
+  background-color: #c0c0c0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-nav{
-    background-color: #C0C0C0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+nav #menu ul {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 50%;
+  width: 50%;
 }
-ul{
-    display: grid;
-    grid-auto-flow: column;
-    gap: 50%;
-    width: 50%;
+nav #menu ul li {
+  font-size: 20px;
+  width: max-content;
+  list-style: none;
 }
-li{
-    font-size: 20px;
-    width: max-content;
-    list-style: none;
+#blok_glowny ul li {
+  text-align: left;
 }
-#menu{
-    width:600px;   
+#menu {
+  width: 600px;
 }
-#logo{
-    object-fit: cover;
-   width: 400px;
+#logo {
+  object-fit: cover;
+  width: 400px;
+}
+footer {
+  text-align: right;
+}
+#blok_glowny {
+  color: #555555;
+  margin: 50px;
+  font-size: 200%;
+}
+hr {
+  width: 70%;
+  height: 2px;
+  background-color: #c0c0c0;
+}
+td {
+  text-align: left;
 }
