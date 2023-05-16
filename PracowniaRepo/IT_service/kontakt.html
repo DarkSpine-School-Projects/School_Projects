@@ -28,25 +28,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
       $(function () {
-        $("#header").load("./header.html");
-        $("#stopka").load("./stopka.html");
+        //components
+        $("#header").load("./header.html"); //nav and header
+        $("#stopka").load("./stopka.html"); //footer
       });
     </script>
     <script>
       function send() {
         let checkbox = document.getElementById("checkbox");
         if (checkbox.checked == true) {
-          document.getElementById("par").style.color = "g";
+          //styles
+          document.getElementById("par").style.color = "#555555";
+
+          //variebles
           let imie = document.getElementById("imie").value;
           let nazwisko = document.getElementById("nazwisko").value;
           let email = document.getElementById("e-mail").value;
           let usluga = document.getElementById("usluga").value;
-          document.getElementById("par").style.color = "#555555";
+
+          //output
           document.getElementById(
             "par"
           ).innerHTML = `${imie.toUpperCase()} ${nazwisko.toUpperCase()}<br>Treść Towojej sprawy: ${usluga}. Na podany e-mail zostanie wysłana oferta${email}`;
         } else {
+          //styles
           document.getElementById("par").style.color = "red";
+
+          //output
           document.getElementById(
             "par"
           ).innerHTML = `Musisz się zpoznać z regulaminem`;
