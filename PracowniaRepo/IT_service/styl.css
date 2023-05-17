@@ -2,7 +2,6 @@
   background-color: #eeeeee;
 }
 #kontener {
-  background-color: #c0c0c0;
   margin: auto;
   width: 1000px;
   text-align: center;
@@ -36,6 +35,11 @@ nav #menu ul li {
 }
 footer {
   text-align: right;
+  background-color: #c0c0c0;
+  padding: 10px;
+}
+#baner {
+  background-color: #dddddd;
 }
 #blok_glowny {
   color: #555555;
