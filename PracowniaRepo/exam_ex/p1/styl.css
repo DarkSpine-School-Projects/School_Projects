@@ -1,8 +1,79 @@
-*,html,body{
-    font-family: Arial, Helvetica, sans-serif;
-
+*,
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
-#header{
-
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
+  border: 0;
+  padding: 0;
+  width: 100%;
 }
-#footer
+header {
+}
+#tytul {
+  float: left;
+  background-color: forestgreen;
+  color: white;
+  height: 100px;
+  width: 80%;
+  text-align: center;
+}
+#miniatura {
+  float: left;
+  background-color: forestgreen;
+  height: 100px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+#miniatura img {
+  height: 80px;
+  width: 30%;
+}
+main {
+  clear: both;
+}
+#lewy {
+  float: left;
+  background-color: tan;
+  height: 700px;
+  width: 25%;
+}
+
+#prawy {
+  float: left;
+  background-color: tan;
+  height: 700px;
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30%);
+  grid-template-rows: repeat(auto-fill, 30%);
+  grid-auto-flow: column;
+}
+#prawy div {
+  padding: 5px;
+  margin: 4px;
+  border: 1px solid forestgreen;
+  border-radius: 20px;
+  overflow: hidden;
+  object-fit: cover;
+}
+#prawy div:hover {
+  border: 1px solid rgb(139, 34, 34);
+}
+#prawy div img {
+  border-radius: 20px;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+footer {
+  width: 100%;
+  clear: both;
+  background-color: forestgreen;
+  color: white;
+  text-align: center;
+}
