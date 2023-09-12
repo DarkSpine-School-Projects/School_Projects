@@ -36,13 +36,12 @@
             <h3>Polecam do zup</h3>
             <ul>
                 <?php //fetch data
-                $sql = "SELECT * FROM `grzyby` where jadalny = 1;";
+                $sql = "SELECT * FROM `grzyby` where jadalny = 1 and potrawy_id=4;";
                 $sql_query = mysqli_query($dbcon, $sql);
-                $fetch = mysqli_fetch_assoc($sql_query);
 
                 while ($fetch = mysqli_fetch_assoc($sql_query)) {
 
-                    $sql1 = "SELECT * FROM `rodzina` where nazwa='borowikowate' and id=" . $fetch["rodzina_id"] . "  ;";
+                    $sql1 = "SELECT * FROM `rodzina` where id=" . $fetch["rodzina_id"] . "  ;";
                     $sql_query1 = mysqli_query($dbcon, $sql1);
                     $fetch1 = mysqli_fetch_assoc($sql_query1);
                     if (isset($fetch1)) {
