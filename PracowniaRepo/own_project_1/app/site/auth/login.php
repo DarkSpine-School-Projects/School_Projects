@@ -50,7 +50,14 @@ require_once '/xampp_8.2.3/htdocs/Projects_Done_On_Lessons/PracowniaRepo/own_pro
                 Password Strenght:
                 <div class="parent_strength">
                 <div id="strenght_pwd"></div>
+                <div>haslo ma zawierac:</div><div>duza litere</div><div>mala litera</div><div>cyfra</div><div>znak specjalny</div><div>więcej niż 4 znaki</div>
                 </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
                 <br>
                 <label for="pwd_1">Confirm Password:</label>
                 <input type="password" name="pwd_1" id="pwd_1" required placeholder="Type Again Your Password">
@@ -75,22 +82,28 @@ require_once '/xampp_8.2.3/htdocs/Projects_Done_On_Lessons/PracowniaRepo/own_pro
         const num_array =  pwd.match(/[0-9]/g)
         const alphabet =  pwd.match(/[a-z]/g)
         const alphabet_upper =  pwd.match(/[A-Z]/g)
+        const special=pwd.match(/[,<>:;"'=`~!@#%&.*+?^${}()|[\]\\]/g)
+        const gg =document.getElementById('gg')
 
         // const specialChars = "\`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~";
+
+        if(pwd.length >=4){
+            
+        }
+
         if (pwd == "" || pwd.length < 1 || !num_array){
             strenght.style.width = "0%"
                 strenght.style.background ="transparent"
         }
-        
-            if( pwd.length >= 7 && pwd.length >= 1 && num_array && alphabet){
+
+            if( pwd.length <= 4 && pwd.length >= 1 || num_array || alphabet || alphabet_upper){
                 strenght.style.width = "33.33%"
-                strenght.style.background ="red"
-               
-            } if(pwd.length >= 8 && num_array && alphabet && alphabet_upper){  
+                
+            } if(pwd.length >= 6 && num_array && alphabet && alphabet_upper ){  
                     strenght.style.width = "66.66%"
                     strenght.style.background ="yellow"
                    
-                } if(pwd.length >= 122 ){
+                } if(pwd.length >= 8 && num_array && alphabet && alphabet_upper && special){
                     strenght.style.width = "100%"
                     strenght.style.background ="green"
                     }
