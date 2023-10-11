@@ -1,0 +1,7 @@
+body {
+  color: rgb(255, 255, 255);
+}
+
+.pwd_input:focus label {
+  color: white;
+}/*# sourceMappingURL=style.css.map */
