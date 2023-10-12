@@ -1,7 +1,119 @@
-body {
-  color: rgb(255, 255, 255);
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+* {
+  font-family: "Pixelify Sans", sans-serif;
 }
 
-.pwd_input:focus label {
+body {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(29deg, rgb(0, 0, 0) 11%, rgb(46, 46, 46) 50%, rgb(0, 0, 0) 90%);
+}
+
+#reg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 0px 40px;
+  height: 70dvh;
+  background: red;
+  display: flex;
+  flex-direction: column;
+  justify-items: left;
+  align-content: left;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(29deg, rgb(0, 0, 0) 11%, rgb(46, 46, 46) 50%, rgb(0, 0, 0) 90%);
+  border-radius: 16px;
+  box-shadow: 0px 0px 100px gray;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.parent_strength {
+  border: 1px solid red;
+  height: 10px;
+  width: 70%;
+}
+
+#strenght_pwd {
+  background: transparent;
+  height: 100%;
+  width: 0%;
+  transition: all 0.2s ease-in-out;
+}
+
+#pwd2,
+#pwd3,
+#pwd4,
+#pwd5,
+#pwd6,
+#pwd7,
+#pwd8 {
+  display: inline;
+  font-weight: bold;
+  color: burlywood;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.impo {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  animation: col 0.5s ease-in-out alternate infinite;
+}
+
+@keyframes col {
+  0% {
+    color: white;
+  }
+  100% {
+    color: red;
+  }
+}
+.pwd_input {
+  border: none;
+  width: 70%;
+  padding: 3px 5px;
+  font-size: 19px;
+  transition: 0.2s ease-in-out;
+  border-radius: 50px;
+}
+.pwd_input:focus {
+  width: 80%;
+  padding: 3px 20px;
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 5px;
+}
+
+label {
+  letter-spacing: 10px;
+  color: gray;
+  font-size: large;
+}
+
+#sumbit {
+  background: black;
+  border: 0px;
+  padding: 5px 35px;
   color: white;
+  transition: 0.2s ease-in-out;
+  margin-top: 2vh;
+}
+#sumbit:hover {
+  background: white;
+  transform: scale(1.15);
+  color: black;
+  cursor: pointer;
+}
+
+#pwd_prompt {
+  width: 20rem;
+  background-color: black;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 5% 0%;
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */
