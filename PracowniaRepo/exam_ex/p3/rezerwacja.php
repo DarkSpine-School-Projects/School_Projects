@@ -16,7 +16,7 @@
         $data = $_POST["data"];
         $person = $_POST["person"];
         $number = $_POST["number"];
-        $qu = mysqli_query($db, "INSERT INTO `rezerwacje`(`nr_stolika`, `data_rez`, `liczba_osob`, `telefon`) VALUES (null,'$data','$person','$number';");
+        $qu = mysqli_query($db, "INSERT INTO `rezerwacje`(`nr_stolika`, `data_rez`, `liczba_osob`, `telefon`) VALUES (null,'$data','$person','$number');");
         if ($qu) {
             echo "<H1>Dodano rezerwacje do bazy</H1>";
         }
