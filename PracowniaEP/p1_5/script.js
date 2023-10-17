@@ -1,16 +1,17 @@
 const obliczanie = () => {
   var x = document.getElementById("num").value;
-  var sum = x * 2 - 0.1 * 2 * x;
-  var sum2 = x * 1 - 0.2 * 1 * x;
-  var check = document.getElementById("check").checked;
-  var wynik = document.getElementById("wynik");
-  if (x >= 1 && x <= 50 && !check) {
-    wynik.innerHTML = "koszt ogłoszenia " + x * 2 + " PLN";
-  } else if (x >= 1 && x <= 50 && check) {
-    wynik.innerHTML = "koszt ogłoszenia " + sum + " PLN";
-  } else if (x >= 51 && !check) {
-    wynik.innerHTML = "koszt ogłoszenia " + sum2 + " PLN";
-  } else if (x >= 51 && check) {
-    wynik.innerHTML = "koszt ogłoszenia " + sum + " PLN";
+  var pies = document.getElementById("pies").checked;
+  var kon = document.getElementById("kon").checked;
+  var kot = document.getElementById("kot").checked;
+  var cena_1 = pies * 10 * x;
+  var cena_2 = kon * 15 * x;
+  var cena_3 = kot * 5 * x;
+
+  if (!pies && !kon && !kot) {
+    wynik.innerHTML = "wybierz zwierze";
+  }
+  if (pies || kon || kot) {
+    wynik.innerHTML = cena_1 + cena_2 + cena_3;
   }
 };
+//pies kon kot karma
