@@ -5,4 +5,3 @@ $kw = [
     "SELECT  `nazwa` FROM `dania` WHERE `typ` = '3' AND `cena` < 15;",//kw3
     "UPDATE `pracownicy` SET `stanowisko`= '4' WHERE `stanowisko` = '3';"//kw4
 ]
-?>
