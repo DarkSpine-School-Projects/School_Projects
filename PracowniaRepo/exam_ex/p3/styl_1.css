@@ -1,0 +1,41 @@
+body,
+html {
+  background-color: #f6e5dc;
+  font-family: Verdana;
+}
+#baner {
+  background-color: #2f180c;
+  text-align: center;
+  color: khaki;
+  height: 60px;
+}
+#lewy {
+  float: left;
+  width: 60%;
+}
+#prawy {
+  float: left;
+  font-size: 150%;
+  padding: 70px;
+}
+#dolny {
+  clear: both;
+  background-color: #d0b6a8;
+  text-align: center;
+  padding: 30px;
+}
+#stopka {
+  background-color: #2f180c;
+  color: khaki;
+  height: 60px;
+}
+img {
+  height: 350px;
+}
+
+button {
+  margin: 10px;
+  padding: 5px;
+  background-color: #2f180c;
+  color: khaki;
+}

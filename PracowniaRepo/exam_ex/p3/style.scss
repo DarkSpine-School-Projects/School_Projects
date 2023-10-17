@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+
+* {
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+body,
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  height: 100dvh;
+  background-color: rgb(17, 17, 17);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+h1 {
+  animation: a1 1s forwards ease-in-out;
+  @keyframes a1 {
+    0% {
+      scale: 1;
+      color: rgb(148, 3, 3);
+      filter: blur(20px);
+    }
+
+    70% {
+      letter-spacing: 10px;
+    }
+    99% {
+      filter: blur(0px);
+    }
+    100% {
+      letter-spacing: 30px;
+      scale: 2;
+      letter-spacing: 5px;
+      color: rgb(255, 0, 0);
+      text-shadow: 0px 0px 20px red;
+    }
+  }
+}

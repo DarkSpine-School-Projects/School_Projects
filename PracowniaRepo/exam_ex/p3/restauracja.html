@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restauracja Wszystkie Smaki</title>
-    <link rel="stylesheet" href="./styl_1.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styl_1.css" />
+  </head>
+  <body>
     <section id="baner">
-        <h1>Witamy w restauracji <sub>"</sub>Wszystkie Smaki"</h1>
+      <h1>Witamy w restauracji "Wszystkie Smaki"</h1>
     </section>
     <section id="main">
-        <div id="lewy"></div>
-        <div id="prawy"></div>
-        <div id="dolny"></div>
+      <div id="lewy"><img src="./menu.jpg" alt="menu" /></div>
+      <div id="prawy">
+        <h4>U nas dobrze zjesz!</h4>
+        <ol>
+          <li>Obiady od 40 zl</li>
+          <li>Przekaski od 10 zl</li>
+          <li>Kolacje od 20 zl</li>
+        </ol>
+      </div>
+      <div id="dolny">
+        <h2>Zarezerwuj stolik on-line</h2>
+        <form action="./rezerwacja.php" method="post" name="form">
+          <label for="data">Data (format rrrr-mm-dd):</label>
+          <br />
+          <input type="text" name="data" id="data" />
+          <br />
+          <label for="person">Ile osob?</label>
+          <br />
+          <input type="number" name="person" id="person" />
+          <br />
+          <label for="number">Twoj numer telefonu</label>
+          <br />
+          <input type="number" name="number" id="number" />
+          <br />
+          <input type="checkbox" name="checkbox" id="checkbox" />
+          <label for="checkbox"
+            >Zgadzam się na przetwarzanie moich danych osobowych</label
+          >
+          <br />
+          <button type="reset">WYCZYSC</button>
+          <button type="submit">REZERWUJ</button>
+        </form>
+      </div>
     </section>
-    <section id="stopka"></section>
-</body>
+    <section id="stopka">Stronę internetową opracował</section>
+  </body>
 </html>
