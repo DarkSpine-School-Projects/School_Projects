@@ -1,0 +1,11 @@
+/////kw1/////
+SELECT `cena` FROM `farby` WHERE `kolor` = 'niebieski' 
+/////////////
+
+/////kw2/////
+SELECT `kolor`, `cena`/`pojemnosc` as `cena` FROM `farby`;
+/////////////
+
+/////kw3/////
+SELECT farby.kolor FROM `farby` INNER JOIN `malowanie`  WHERE farby.id_farby = malowanie.id_farby and malowanie.id_pomieszczenia = 3
+/////////////

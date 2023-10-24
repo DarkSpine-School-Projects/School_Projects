@@ -41,3 +41,9 @@ footer {
   color: blue;
   padding: 10px;
 }
+#sam {
+  display: none;
+}
+#aut {
+  display: none;
+}

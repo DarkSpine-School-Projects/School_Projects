@@ -4,6 +4,8 @@ function licz() {
 
   if (x < 500) {
     document.getElementById("sc").innerHTML = "jedz autobusem";
+    document.getElementById("aut").style.display = "block";
+    document.getElementById("sam").style.display = "none";
     return;
   }
   if (x >= 500) {
@@ -16,4 +18,7 @@ function licz() {
     sum = x * 45;
   }
   document.getElementById("sc").innerHTML = "koszt blietu" + sum + "zł";
+  document.getElementById("sam").style.display = "block";
+
+  document.getElementById("aut").style.display = "none";
 }
