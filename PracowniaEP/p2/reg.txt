@@ -1,0 +1,93 @@
+Regulamin przedmiotu Systemy Operacyjne (SOI)
+
+
+Przedmiot składa się z wykładu i laboratorium, ocenianych niezależnie.  Część
+teoretyczna jest oceniana w skali 0-60 punktów na podstawie kolokwium (20
+punktów) i egzaminu (40 punktów). Laboratorium jest oceniane w skali od 0 do
+40 punktów. 
+
+
+Laboratorium 
+------------
+
+- każde z ćwiczeń laboratoryjnych jest oceniane niezależnie, w ustalonej dla
+  danego ćwiczenia skali punktowej, 4 punkty dla ćwiczeń dwugodzinnych i 8
+  punktów dla ćwiczeń czterogodzinnych.
+
+- ocenę ćwiczenia wystawia prowadzący dany termin laboratorium i jest ona
+  ostateczna, 
+
+- suma możliwych do zdobycia punktów z laboratorium wynosi 40. Wymagane jest
+  uzyskanie co najmniej 20 punktów,
+
+- niezaliczenie dwóch ćwiczeń jest równoznaczne z niezaliczeniem przedmiotu,
+
+- w przypadku ćwiczeń czterogodzinnych, czyli odbywających się w dwóch
+  kolejnych terminach laboratorium, na pierwszy termin należy dostarczyc w
+  postaci spisanej pełną koncepcję/projekt rozwiązania. Oddanie koncepcji jest
+  obowiązkowe w pierwszym z dwóch terminów laboratorium. Koncepcja jest omawiana
+  z prowadzącym, prowadzący ocenia koncepcję w skali 0-2 punkty. W drugim
+  terminie ćwiczenia czterogodzinnego dokonywany jest odbiór zadania, przy czym
+  sposób wykonania weryfikowany jest z treścią przedstawionego uprzednio
+  projektu. Realizacja zadania oceniana jest w skali 0-6 punktow. Sumarycznie za
+  zadanie czterogodzinne można więc otrzymać maksymalnie 8 punktów.
+
+- zadania muszą być oddawane w ustalonym dla nich terminie. Zadanie może być
+  oddane do tygodnia (do kolejnego terminu) później, ale wiąże się to z
+  automatycznym pomniejszeniem liczby możliwych do zdobycia punktów za ćwiczenie
+  o 1. Spóźnienie o więcej niż tydzień powoduje uzyskanie 0 punktów za ćwiczenie,
+  
+- studenci zobowiązani są do wysyłania poprzez e-mail swoich wszystkich
+  rozwiązań na adres prowadzącego dane zajęcia laboratoryjne,
+
+- jako termin oddania ćwiczenia rozumie się: albo datę demonstracji ćwiczenia
+  w trakcie zajęć laboratoryjnych prowadzącemu, albo datę otrzymania od
+  studenta przez serwer pocztowy obsługujący skrzynkę pocztową prowadzącego
+  zajęcia e-maila z rozwiązaniem - w zależności od tego, które zdarzenie
+  wystąpi jako pierwsze, 
+  
+- w przypadku wysyłania rozwiązania przez e-mail obowiązuje termin do północy
+  dnia, w którym odbywały się zajęcia laboratoryjne. 
+  
+- wysłanie rozwiązania przez e-mail nie zwalnia studenta z obowiązku
+  demonstracji rozwiązania prowadzącemu w trakcie kolejnych zajęć
+  laboratoryjnych. Dopiero po takiej demonstracji, po uwzględnieniu daty
+  odebrania e-maila z rozwiązaniem, prowadzący ocenia punktowo ćwiczenie,
+
+- w przypadku jednokrotnego wykrycia faktu niesamodzielnej pracy studenta nad
+  rozwiązaniem ćwiczenia, traci on możliwość uzyskania z przedmiotu oceny
+  wyższej niż 3.0,
+
+- w uzasadnionych przypadkach prowadzący zajęcia może złagodzić wobec studenta
+  obostrzenia wynikające z pozostałych punktów regulaminu laboratorium.
+
+- treści zadań laboratoryjnych umieszczane są na serwerze
+  http://studia.elka.pw.edu.pl/ na stronie przedmiotu SOI
+
+- przewidziany jest jeden termin dodatkowy umożliwiający odrobienie jednego
+  zaległego ćwiczenia osobom, które były nieobecne w którymś ze standardowych
+  terminów laboratorium. Nie ma możliwości poprawiania oddanego wcześniej
+  ćwiczenia. Nie ma też możliwości przystąpienia w terminie dodatkowym do
+  ćwiczenia, z którego uprzednio z wejściówki otrzymano 0 punktów.
+
+
+Wykład
+------
+
+- ocena z wykładu jest wystawiana na podstawie pisemnego testu wiedzy w trakcie
+  semestru i egzaminu w sesji. Student ma prawo do przystąpienia do 2 terminów
+  egzaminu. Wymagane jest uzyskanie co najmniej 30 punktów z kolokwium i
+  egzaminu łącznie.
+
+- punkty uzyskane z części teoretycznej (wykład) i z części laboratoryjnej są
+  sumowane. Przedmiot zalicza suma 51 punktów.
+
+- skala ocen z przedmiotu jest następująca:
+
+      51-60      3
+      61-70      3.5
+      71-80      4
+      81-90      4.5
+      91-100     5
+
+- w indywidualnych przypadkach wykładowca ma prawo podwyższyć ocenę.

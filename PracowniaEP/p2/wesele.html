@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bilety Lotnicze</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <img src="./logo.png" alt="Dom wyselny" height="70" />Dom wyselny
+        zorganizuje wsele za ciebie
+        <img src="./logo.png" alt="Dom wyselny" height="70" />
+      </h1>
+    </header>
+    <div id="p1">
+      <h2>Dom Weselny</h2>
+      <p>ul. Przemyslowa 5</p>
+      <p>Kalisz</p>
+      <p><a href="./logo.png" download>Pobierz Logo</a></p>
+    </div>
+    <div id="ps">
+      <h2>Oferujemy</h2>
+      <ul>
+        <li>Wesela</li>
+        <li>Bankiety</li>
+        <li>Konferencje</li>
+      </ul>
+    </div>
+    <div id="pp">
+      <p><a href="./reg.txt">Czytaj regulamin</a></p>
+    </div>
+    <form id="form" onsubmit="licz()"></form>
+    <div id="pd">
+      <h2>Ile bedzie kosztowalo moje wesele?</h2>
+      <label for="liczba">Podaj liczbe gosci</label
+      ><input type="number" name="liczba" id="liczba" />
+      <br />
+      <input type="checkbox" name="check" id="check" />
+      <label for="check">Wesele z poprawinami</label>
+      <br />
+      <input type="submit" value="Oblicz Koszt" onclick="licz()" />
+      <p id="sc"></p>
+    </div>
+    <footer>Strone wykonal: XYZ</footer>
+  </body>
+</html>
