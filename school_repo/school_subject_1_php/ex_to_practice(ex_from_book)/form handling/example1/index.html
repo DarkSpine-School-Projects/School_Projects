@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Obsluga fromularzy  
+        <!--WITAJ (IMIE)--> 
+    </title>
+    <script>
+         function powitanie(form1){
+             if(form1.imie.value==""){
+                 document.write('nie podales swojego imienia.');
+             }
+             else{
+                 document.write('witaj '+form1.imie.value);
+             }
+         }
+    </script>
+</head>
+<body>
+<form method="post" name="form1">
+    podaj swoje imie: <input type="text" name="imie">
+    <br>
+    <input type="button" name="p1" valeue="kliknij" onClick="powitanie(this.form)">
+</form>
+</body>
+</html>
