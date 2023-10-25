@@ -1,7 +1,7 @@
 <?php 
 if(!isset($_COOKIE['user_id'])){
     echo
-    '<a href="http://localhost/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/login.php">
+    '<a href="http://localhost/School_Projects/school_repo/school_subject_1_php/own_website/assets/site/login.php">
     <div class="accaunt-btn">
         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
             <path
@@ -18,7 +18,7 @@ if(!isset($_COOKIE['user_id'])){
 ';
 }else{
     if(isset($_POST["logout"])){
-    setcookie("user_id","".$_COOKIE['user_id']."",time() - 3600, "/Projects_Done_On_Lessons/PracowniaRepo/own_project/");
+    setcookie("user_id","".$_COOKIE['user_id']."",time() - 3600, "/School_Projects/school_repo/school_subject_1_php/own_website/");
 
     header('Refresh:0');
     
@@ -35,7 +35,7 @@ if(!isset($_COOKIE['user_id'])){
         </svg>
     </button>
     <div onClick="hidde_option()" id="option_container_bg" ></div>
-        <div id="option_container" style=" background:linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8463760504201681) 34%, rgba(0,0,0,0.6615021008403361) 100%), url(/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/img/'.$_COOKIE['user_id'].'.png) !important; background-size: cover !important; background-position: center !important;  ">
+        <div id="option_container" style=" background:linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8463760504201681) 34%, rgba(0,0,0,0.6615021008403361) 100%), url(/School_Projects/school_repo/school_subject_1_php/own_website/assets/img/'.$_COOKIE['user_id'].'.png) !important; background-size: cover !important; background-position: center !important;  ">
             
             <svg class="close-btn" onClick="hidde_option()" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" "><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z"/></svg>   
                 
@@ -44,7 +44,7 @@ if(!isset($_COOKIE['user_id'])){
                     <h3>Accaunt Settings</h3>
                 </div>
 
-            <form class="logout" style="display:flex; flex-direction:column;"action="/Projects_Done_On_Lessons/PracowniaRepo/own_project/image_req.php" method="post" enctype="multipart/form-data">
+            <form class="logout" style="display:flex; flex-direction:column;"action="/School_Projects/school_repo/school_subject_1_php/own_website/image_req.php" method="post" enctype="multipart/form-data">
                 <div>Select Your Account Picture</div>
                 <br>
                 <div style="display:flex; flex-direction:row; width:80%; gap:0px;">
@@ -54,7 +54,7 @@ if(!isset($_COOKIE['user_id'])){
                 <button type="sumbit" name="send_picture" class="logout-btn" style="width:100%; padding:5px;margin-left: -5px;">Commit</button>
                 </div>
             </form>
-            <form class="logout" action="/Projects_Done_On_Lessons/PracowniaRepo/own_project/" method="post">
+            <form class="logout" action="/School_Projects/school_repo/school_subject_1_php/own_website/" method="post">
                 <button type="sumbit" name="logout" class="logout-btn">
                     logout
                 </button>
@@ -97,7 +97,3 @@ if(!isset($_COOKIE['user_id'])){
 
 ';
 };
-   
-
-
-?>

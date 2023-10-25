@@ -134,7 +134,7 @@
                         $folder1 = "../img/" . $movie_id . ".png";
                         rename("$folder", "$folder1");
                         move_uploaded_file($tempname, $folder1);
-                        $sql_insert = "/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/img/" . $movie_id . ".png";
+                        $sql_insert = "/School_Projects/school_repo/school_subject_1_php/own_website/assets/img/" . $movie_id . ".png";
 
 
                         $sql = "INSERT INTO `movie`(`vid_link`, `decs`, `movie_id`, `title`, `date`, `category`, `add_date`, `img_link`)  VALUES ('$vid_link','$desc','$movie_id','$title','$date','$category','$add_date', '$sql_insert');";
@@ -161,7 +161,7 @@
 
         ';
         echo "<script type=\"text/javascript\">
-        window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/';
+        window.location.href = '/School_Projects/school_repo/school_subject_1_php/own_website/';
         </script>";
         }
         }

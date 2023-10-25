@@ -21,7 +21,7 @@ use GuzzleHttp\Psr7\Query;
                 if($assoc_user['picture']!=''){
                     echo '<img class="user_image_com" src="'.$assoc_user['picture'].'" alt="'.$assoc_user['nick'].'">';
                 }else{
-                    echo'<img class="user_image_com" src="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/img/Default_pfp.svg.png" alt="'.$assoc_user['nick'].'">';
+                    echo'<img class="user_image_com" src="/School_Projects/school_repo/school_subject_1_php/own_website/assets/img/Default_pfp.svg.png" alt="'.$assoc_user['nick'].'">';
                 }
                 echo'<h5>'.$assoc_user['nick'].'</h5>
                 <input class="add_com" name="add_com" type="text">'; 
@@ -34,7 +34,7 @@ use GuzzleHttp\Psr7\Query;
                     $sql = "INSERT INTO `comments`(`movie_id`, `comment`, `user_id`, `add_date`, `comment_id`) VALUES ('$movie_id','$add_com','".$_COOKIE['user_id']."','$add_date','$comment_id');";
                     $query = mysqli_query($server_con, $sql);
                     
-                    echo "<script type=\"text/javascript\"> window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/".$movie_id.".php';</script>";
+                    echo "<script type=\"text/javascript\"> window.location.href = '/School_Projects/school_repo/school_subject_1_php/own_website/assets/movie/".$movie_id.".php';</script>";
                    
                 }
                      echo ' <button class="sumbit_com" name="sumbit" type="sumbit"><svg fill="white" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 12l11 3.1 7-8.1-8.156 5.672-4.312-1.202 15.362-7.68-3.974 14.57-3.75-3.339-2.17 2.925v-.769l-2-.56v7.383l4.473-6.031 4.527 4.031 6-22z"/></svg></button>     
@@ -59,7 +59,7 @@ use GuzzleHttp\Psr7\Query;
                      if($assoc_user_u['picture']!=''){
                          echo '<img style="margin:0px;" class="user_image_com" src="'.$assoc_user_u['picture'].'" alt="'.$assoc_user_u['nick'].'">';
                      }else{
-                     echo'<img style="margin:0px;" class="user_image_com" src="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/img/Default_pfp.svg.png" alt="'.$assoc_user_u['nick'].'">';
+                     echo'<img style="margin:0px;" class="user_image_com" src="/School_Projects/school_repo/school_subject_1_php/own_website/assets/img/Default_pfp.svg.png" alt="'.$assoc_user_u['nick'].'">';
                      }
                     echo' <h5 style="margin:0px; margin-left:5px; margin-right:5%;" class="user_nick">'.$assoc_user_u['nick'].':</h5><span style="overflow:hidden; word-wrap: break-word; width:60%;">'.$assoc_user['comment'].'</span>';
                               

@@ -9,14 +9,14 @@
     <title>LOGIN</title>
     <link rel="stylesheet" href="../style/index_style/index.css">
     <style>
-        body {
+    body {
 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
 
-        }
+    }
     </style>
 </head>
 
@@ -41,7 +41,7 @@
                             You are Already logged
                         </form>
                         ';
-                echo "<script type=\"text/javascript\"> window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/';</script>";
+                echo "<script type=\"text/javascript\"> window.location.href = '/School_Projects/school_repo/school_subject_1_php/own_website/';</script>";
             }
         } elseif (!isset($_COOKIE['user_id'])) {
             echo
@@ -101,7 +101,7 @@
                     $user_id = uniqid('user');
                     $sql = "INSERT INTO `user`(`nick`, `mail`, `password`, `user_id`, `role`) VALUES ('$nick','$mail','$password','$user_id','user');";
                     mysqli_query($server_con, $sql);
-                    header('Location: /Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/login.php');
+                    header('Location: /School_Projects/school_repo/school_subject_1_php/own_website/assets/site/login.php');
                     die();
                 }
             }

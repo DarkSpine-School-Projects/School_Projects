@@ -2,7 +2,7 @@
     <ul>
         <div class="option-container">
 
-            <a href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/">
+            <a href="/School_Projects/school_repo/school_subject_1_php/own_website/">
                 <li>
                     Home
                     <div class="underline"></div>
@@ -19,7 +19,7 @@
             if($_COOKIE['user_id'] == $acces_admin_ad['user_id']){
                 echo 
                 '
-                <a href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/admin.php">
+                <a href="/School_Projects/school_repo/school_subject_1_php/own_website/assets/site/admin.php">
                     <li>
                         Admin
                         <div class="underline"></div>
@@ -29,14 +29,14 @@
             }
         }
         ?>
-            <a href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/movies.php">
+            <a href="/School_Projects/school_repo/school_subject_1_php/own_website/assets/site/movies.php">
                 <li>
                     Movies
                     <div class="underline"></div>
 
                 </li>
             </a>
-            <!-- <a href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/site/series.php">
+            <!-- <a href="/School_Projects/school_repo/school_subject_1_php/own_website/assets/site/series.php">
                 <li>
                     Series
                     <div class="underline"></div>
@@ -46,7 +46,7 @@
 
 
         <li class="li-search">
-            <form action="/Projects_Done_On_Lessons/PracowniaRepo/own_project/" method="GET">
+            <form action="/School_Projects/school_repo/school_subject_1_php/own_website/" method="GET">
                 <input type="text" name="search" class="search" placeholder="SEARCH">
                 <button type='sumbit' name='sumbit' class="search-btn">SUMBIT</button>
             </form>

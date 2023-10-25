@@ -26,9 +26,9 @@
 
     <!-- Account BackGround Video -->
     <div class="container">
-    <section class="movie-card-container">
+        <section class="movie-card-container">
 
-        <?php 
+            <?php 
             
             
             if(!isset($_GET['search']) || $_GET['search']==''){
@@ -40,7 +40,7 @@
                 while($assoc = mysqli_fetch_assoc($query)){
                     echo 
                     ' 
-                    <a name="movie-card" class="movie-card" href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/'.$assoc['movie_id'].'.php">
+                    <a name="movie-card" class="movie-card" href="/School_Projects/school_repo/school_subject_1_php/own_website/assets/movie/'.$assoc['movie_id'].'.php">
                     <div style="margin:0px; width:100%;" >
                         <div class="image">
                         <img src="'.$assoc['img_link'].'" alt="'.$assoc['title'].'">
@@ -66,7 +66,7 @@
                 while($assoc = mysqli_fetch_assoc($query)){
                     echo 
                     ' 
-                     <a name="movie-card" class="movie-card" href="/Projects_Done_On_Lessons/PracowniaRepo/own_project/assets/movie/'.$assoc['movie_id'].'.php">
+                     <a name="movie-card" class="movie-card" href="/School_Projects/school_repo/school_subject_1_php/own_website/assets/movie/'.$assoc['movie_id'].'.php">
                     <div style="margin:0px; width:100%;" >
                         <div class="image">
                         <img src="'.$assoc['img_link'].'" alt="'.$assoc['title'].'">
@@ -105,8 +105,8 @@
                 }
             }
             ?>
-    </section>
-</div>
+        </section>
+    </div>
 
 
 </body>

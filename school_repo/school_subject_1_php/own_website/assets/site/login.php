@@ -44,7 +44,7 @@
                 </form>
                
                 '; 
-                echo "<script type=\"text/javascript\"> window.location.href = '/Projects_Done_On_Lessons/PracowniaRepo/own_project/';</script>";
+                echo "<script type=\"text/javascript\"> window.location.href = '/School_Projects/school_repo/school_subject_1_php/own_website/';</script>";
             } 
         }elseif(!isset($_COOKIE['user_id'])){
                 echo'<form class="log-container-flex" method="POST">
@@ -90,8 +90,8 @@
                            if(!isset($assoc['user_id'])){
                                 echo 'Wrong Mail Or Password';
                             }else{
-                                setcookie("user_id", $assoc['user_id'],time() + (86400 * 30), "/Projects_Done_On_Lessons/PracowniaRepo/own_project/");
-                                 header('Location: /Projects_Done_On_Lessons/PracowniaRepo/own_project/');
+                                setcookie("user_id", $assoc['user_id'],time() + (86400 * 30), "/School_Projects/school_repo/school_subject_1_php/own_website/");
+                                 header('Location: /School_Projects/school_repo/school_subject_1_php/own_website/');
                                   die();
                             }
                         }
